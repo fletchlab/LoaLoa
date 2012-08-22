@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		82DFB10815E4761E00D450BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFB10715E4761E00D450BC /* UIKit.framework */; };
+		82DFB10A15E4761E00D450BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFB10915E4761E00D450BC /* Foundation.framework */; };
+		82DFB10C15E4761E00D450BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFB10B15E4761E00D450BC /* CoreGraphics.framework */; };
+		82DFB11215E4761E00D450BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82DFB11015E4761E00D450BC /* InfoPlist.strings */; };
+		82DFB11415E4761E00D450BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFB11315E4761E00D450BC /* main.m */; };
+		82DFB11815E4761E00D450BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFB11715E4761E00D450BC /* AppDelegate.m */; };
+		82DFB11B15E4761E00D450BC /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82DFB11915E4761E00D450BC /* MainStoryboard_iPhone.storyboard */; };
+		82DFB11E15E4761E00D450BC /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82DFB11C15E4761E00D450BC /* MainStoryboard_iPad.storyboard */; };
+		82DFB12115E4761E00D450BC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFB12015E4761E00D450BC /* ViewController.m */; };
+		82DFB12915E4761E00D450BC /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFB12815E4761E00D450BC /* SenTestingKit.framework */; };
+		82DFB12A15E4761E00D450BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFB10715E4761E00D450BC /* UIKit.framework */; };
+		82DFB12B15E4761E00D450BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFB10915E4761E00D450BC /* Foundation.framework */; };
+		82DFB13315E4761E00D450BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82DFB13115E4761E00D450BC /* InfoPlist.strings */; };
+		82DFB13615E4761E00D450BC /* LoaLoaAugustTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFB13515E4761E00D450BC /* LoaLoaAugustTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		82DFB12C15E4761E00D450BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82DFB0FA15E4761E00D450BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82DFB10215E4761E00D450BC;
+			remoteInfo = LoaLoaAugust;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		82DFB10315E4761E00D450BC /* LoaLoaAugust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoaLoaAugust.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		82DFB10715E4761E00D450BC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		82DFB10915E4761E00D450BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		82DFB10B15E4761E00D450BC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		82DFB10F15E4761E00D450BC /* LoaLoaAugust-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LoaLoaAugust-Info.plist"; sourceTree = "<group>"; };
+		82DFB11115E4761E00D450BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		82DFB11315E4761E00D450BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		82DFB11515E4761E00D450BC /* LoaLoaAugust-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LoaLoaAugust-Prefix.pch"; sourceTree = "<group>"; };
+		82DFB11615E4761E00D450BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		82DFB11715E4761E00D450BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		82DFB11A15E4761E00D450BC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		82DFB11D15E4761E00D450BC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		82DFB11F15E4761E00D450BC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		82DFB12015E4761E00D450BC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		82DFB12715E4761E00D450BC /* LoaLoaAugustTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoaLoaAugustTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		82DFB12815E4761E00D450BC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		82DFB13015E4761E00D450BC /* LoaLoaAugustTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LoaLoaAugustTests-Info.plist"; sourceTree = "<group>"; };
+		82DFB13215E4761E00D450BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		82DFB13415E4761E00D450BC /* LoaLoaAugustTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoaLoaAugustTests.h; sourceTree = "<group>"; };
+		82DFB13515E4761E00D450BC /* LoaLoaAugustTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoaLoaAugustTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		82DFB10015E4761E00D450BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82DFB10815E4761E00D450BC /* UIKit.framework in Frameworks */,
+				82DFB10A15E4761E00D450BC /* Foundation.framework in Frameworks */,
+				82DFB10C15E4761E00D450BC /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82DFB12315E4761E00D450BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82DFB12915E4761E00D450BC /* SenTestingKit.framework in Frameworks */,
+				82DFB12A15E4761E00D450BC /* UIKit.framework in Frameworks */,
+				82DFB12B15E4761E00D450BC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		82DFB0F815E4761E00D450BC = {
+			isa = PBXGroup;
+			children = (
+				82DFB10D15E4761E00D450BC /* LoaLoaAugust */,
+				82DFB12E15E4761E00D450BC /* LoaLoaAugustTests */,
+				82DFB10615E4761E00D450BC /* Frameworks */,
+				82DFB10415E4761E00D450BC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		82DFB10415E4761E00D450BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				82DFB10315E4761E00D450BC /* LoaLoaAugust.app */,
+				82DFB12715E4761E00D450BC /* LoaLoaAugustTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		82DFB10615E4761E00D450BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82DFB10715E4761E00D450BC /* UIKit.framework */,
+				82DFB10915E4761E00D450BC /* Foundation.framework */,
+				82DFB10B15E4761E00D450BC /* CoreGraphics.framework */,
+				82DFB12815E4761E00D450BC /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		82DFB10D15E4761E00D450BC /* LoaLoaAugust */ = {
+			isa = PBXGroup;
+			children = (
+				82DFB11615E4761E00D450BC /* AppDelegate.h */,
+				82DFB11715E4761E00D450BC /* AppDelegate.m */,
+				82DFB11915E4761E00D450BC /* MainStoryboard_iPhone.storyboard */,
+				82DFB11C15E4761E00D450BC /* MainStoryboard_iPad.storyboard */,
+				82DFB11F15E4761E00D450BC /* ViewController.h */,
+				82DFB12015E4761E00D450BC /* ViewController.m */,
+				82DFB10E15E4761E00D450BC /* Supporting Files */,
+			);
+			path = LoaLoaAugust;
+			sourceTree = "<group>";
+		};
+		82DFB10E15E4761E00D450BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				82DFB10F15E4761E00D450BC /* LoaLoaAugust-Info.plist */,
+				82DFB11015E4761E00D450BC /* InfoPlist.strings */,
+				82DFB11315E4761E00D450BC /* main.m */,
+				82DFB11515E4761E00D450BC /* LoaLoaAugust-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		82DFB12E15E4761E00D450BC /* LoaLoaAugustTests */ = {
+			isa = PBXGroup;
+			children = (
+				82DFB13415E4761E00D450BC /* LoaLoaAugustTests.h */,
+				82DFB13515E4761E00D450BC /* LoaLoaAugustTests.m */,
+				82DFB12F15E4761E00D450BC /* Supporting Files */,
+			);
+			path = LoaLoaAugustTests;
+			sourceTree = "<group>";
+		};
+		82DFB12F15E4761E00D450BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				82DFB13015E4761E00D450BC /* LoaLoaAugustTests-Info.plist */,
+				82DFB13115E4761E00D450BC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		82DFB10215E4761E00D450BC /* LoaLoaAugust */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82DFB13915E4761E00D450BC /* Build configuration list for PBXNativeTarget "LoaLoaAugust" */;
+			buildPhases = (
+				82DFB0FF15E4761E00D450BC /* Sources */,
+				82DFB10015E4761E00D450BC /* Frameworks */,
+				82DFB10115E4761E00D450BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LoaLoaAugust;
+			productName = LoaLoaAugust;
+			productReference = 82DFB10315E4761E00D450BC /* LoaLoaAugust.app */;
+			productType = "com.apple.product-type.application";
+		};
+		82DFB12615E4761E00D450BC /* LoaLoaAugustTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82DFB13C15E4761E00D450BC /* Build configuration list for PBXNativeTarget "LoaLoaAugustTests" */;
+			buildPhases = (
+				82DFB12215E4761E00D450BC /* Sources */,
+				82DFB12315E4761E00D450BC /* Frameworks */,
+				82DFB12415E4761E00D450BC /* Resources */,
+				82DFB12515E4761E00D450BC /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				82DFB12D15E4761E00D450BC /* PBXTargetDependency */,
+			);
+			name = LoaLoaAugustTests;
+			productName = LoaLoaAugustTests;
+			productReference = 82DFB12715E4761E00D450BC /* LoaLoaAugustTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		82DFB0FA15E4761E00D450BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Mike D'Ambrosio";
+			};
+			buildConfigurationList = 82DFB0FD15E4761E00D450BC /* Build configuration list for PBXProject "LoaLoaAugust" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 82DFB0F815E4761E00D450BC;
+			productRefGroup = 82DFB10415E4761E00D450BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				82DFB10215E4761E00D450BC /* LoaLoaAugust */,
+				82DFB12615E4761E00D450BC /* LoaLoaAugustTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		82DFB10115E4761E00D450BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82DFB11215E4761E00D450BC /* InfoPlist.strings in Resources */,
+				82DFB11B15E4761E00D450BC /* MainStoryboard_iPhone.storyboard in Resources */,
+				82DFB11E15E4761E00D450BC /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82DFB12415E4761E00D450BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82DFB13315E4761E00D450BC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		82DFB12515E4761E00D450BC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		82DFB0FF15E4761E00D450BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82DFB11415E4761E00D450BC /* main.m in Sources */,
+				82DFB11815E4761E00D450BC /* AppDelegate.m in Sources */,
+				82DFB12115E4761E00D450BC /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82DFB12215E4761E00D450BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82DFB13615E4761E00D450BC /* LoaLoaAugustTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		82DFB12D15E4761E00D450BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 82DFB10215E4761E00D450BC /* LoaLoaAugust */;
+			targetProxy = 82DFB12C15E4761E00D450BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		82DFB11015E4761E00D450BC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				82DFB11115E4761E00D450BC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		82DFB11915E4761E00D450BC /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				82DFB11A15E4761E00D450BC /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		82DFB11C15E4761E00D450BC /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				82DFB11D15E4761E00D450BC /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		82DFB13115E4761E00D450BC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				82DFB13215E4761E00D450BC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		82DFB13715E4761E00D450BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		82DFB13815E4761E00D450BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		82DFB13A15E4761E00D450BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LoaLoaAugust/LoaLoaAugust-Prefix.pch";
+				INFOPLIST_FILE = "LoaLoaAugust/LoaLoaAugust-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		82DFB13B15E4761E00D450BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LoaLoaAugust/LoaLoaAugust-Prefix.pch";
+				INFOPLIST_FILE = "LoaLoaAugust/LoaLoaAugust-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		82DFB13D15E4761E00D450BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LoaLoaAugust.app/LoaLoaAugust";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LoaLoaAugust/LoaLoaAugust-Prefix.pch";
+				INFOPLIST_FILE = "LoaLoaAugustTests/LoaLoaAugustTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		82DFB13E15E4761E00D450BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LoaLoaAugust.app/LoaLoaAugust";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LoaLoaAugust/LoaLoaAugust-Prefix.pch";
+				INFOPLIST_FILE = "LoaLoaAugustTests/LoaLoaAugustTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		82DFB0FD15E4761E00D450BC /* Build configuration list for PBXProject "LoaLoaAugust" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82DFB13715E4761E00D450BC /* Debug */,
+				82DFB13815E4761E00D450BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		82DFB13915E4761E00D450BC /* Build configuration list for PBXNativeTarget "LoaLoaAugust" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82DFB13A15E4761E00D450BC /* Debug */,
+				82DFB13B15E4761E00D450BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		82DFB13C15E4761E00D450BC /* Build configuration list for PBXNativeTarget "LoaLoaAugustTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82DFB13D15E4761E00D450BC /* Debug */,
+				82DFB13E15E4761E00D450BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 82DFB0FA15E4761E00D450BC /* Project object */;
+}
