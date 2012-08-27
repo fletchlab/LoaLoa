@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="pYs-ZX-RWN">
+    <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
+    </dependencies>
+    <scenes>
+        <!--Loa Loa View Controller-->
+        <scene sceneID="YIJ-hj-Cv9">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="viF-FX-xG2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="GCX-jz-9hU" customClass="LoaLoaViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d49-AM-pET">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="patient_step_A.png" id="IDA-5m-KiK">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Lmo-mr-fkX">
+                                <rect key="frame" x="124" y="373" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="DtI-yA-vOX" kind="modal" id="RwO-Nw-daF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Shv-qh-uIj">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5qc-gU-8mx">
+                            <rect key="frame" x="84" y="5" width="151" height="35"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="Back to Main App">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="mainAppButtonPressed:" destination="GCX-jz-9hU" eventType="touchUpInside" id="UQ6-Dh-SsP"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="586" y="93"/>
+        </scene>
+        <!--Loa Loa View Controller-->
+        <scene sceneID="M1a-xe-09S">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Sh-j6-f08" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="sh8-TO-cFl" customClass="LoaLoaViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="emy-eA-Ykd">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="patient_step_B.png" id="iFF-Sh-Q76">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wQ2-gi-gu5">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fug-Te-nxE">
+                            <rect key="frame" x="82" y="5" width="155" height="35"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="Back To Main App">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="mainAppButtonPressed:" destination="sh8-TO-cFl" eventType="touchUpInside" id="qeX-G6-3hr"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1472" y="93"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Vhl-c2-foH">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9am-xD-pSC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="pYs-ZX-RWN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XRz-IG-z2x">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GCX-jz-9hU" kind="relationship" relationship="rootViewController" id="0PH-Hn-N7h"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="60" y="93"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aiN-le-Bf3">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TJQ-eT-JHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="DtI-yA-vOX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Q2F-kB-FY3">
+                        <nil key="title"/>
+                    </navigationItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ofa-bb-I3P">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sh8-TO-cFl" kind="relationship" relationship="rootViewController" id="5xO-uX-Ks4"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1051" y="93"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="patient_step_A.png" width="1333" height="2000"/>
+        <image name="patient_step_B.png" width="1333" height="2000"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

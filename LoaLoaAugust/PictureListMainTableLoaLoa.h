@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PictureListMainTableLoaLoa.h
 //  LoaLoaAugust
 //
 //  Created by Mike D'Ambrosio on 8/27/12.
@@ -8,6 +8,8 @@
 
 #import "PictureListMainTable.h"
 
-@interface ViewController : PictureListMainTable
+@interface PictureListMainTableLoaLoa : PictureListMainTable
+- (IBAction)loaLoaButtonPressed:(id)sender;
+
 
 @end
