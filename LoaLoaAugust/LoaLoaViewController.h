@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CSUserContext.h"
 
 @interface LoaLoaViewController : UIViewController
 @property (nonatomic, assign) BOOL viewAppeared;
 @property (nonatomic, assign) BOOL viewDisappeared;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) CSUserContext *userContext;
+
+//@property (nonatomic, strong) CSUserContext *userContext;
+//@property (nonatomic, strong) NSMutableArray *pictureListData;
+
 
 -(IBAction)mainAppButtonPressed:(id)sender;
 @end

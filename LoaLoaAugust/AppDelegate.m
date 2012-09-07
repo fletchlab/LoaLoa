@@ -92,6 +92,12 @@
     return _managedObjectContext;
 }
 
+//remove
++ (AppDelegate *)sharedAppDelegate
+{
+    return (AppDelegate *) [UIApplication sharedApplication].delegate;
+}
+
 // Returns the managed object model for the application.
 // If the model doesn't already exist, it is created from the application's model.
 - (NSManagedObjectModel *)managedObjectModel

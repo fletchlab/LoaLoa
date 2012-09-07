@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8269C39415EC3F7800013C49 /* Main_IPhone_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8269C39315EC3F7800013C49 /* Main_IPhone_Storyboard.storyboard */; };
+		827658EB15EFF69C00D03FA3 /* CaptureViewControllerLoaLoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 827658EA15EFF69C00D03FA3 /* CaptureViewControllerLoaLoa.m */; };
+		827658EF15F6B48300D03FA3 /* Analysis.mm in Sources */ = {isa = PBXBuildFile; fileRef = 827658EE15F6B48300D03FA3 /* Analysis.mm */; };
+		827658F215F6B91600D03FA3 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 827658F115F6B91600D03FA3 /* UIImage+OpenCV.mm */; };
+		827658F415F6B9BC00D03FA3 /* OpenCV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 827658F315F6B9BC00D03FA3 /* OpenCV.framework */; };
+		827658F615F6BA6900D03FA3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 827658F515F6BA6900D03FA3 /* libz.dylib */; };
 		82CC320015EBED75005AF1B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CC31FF15EBED75005AF1B0 /* ViewController.m */; };
 		82CC320415EBEDA8005AF1B0 /* PictureListMainTableLoaLoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CC320315EBEDA8005AF1B0 /* PictureListMainTableLoaLoa.m */; };
 		82DFB10815E4761E00D450BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFB10715E4761E00D450BC /* UIKit.framework */; };
@@ -15,8 +21,6 @@
 		82DFB11215E4761E00D450BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82DFB11015E4761E00D450BC /* InfoPlist.strings */; };
 		82DFB11415E4761E00D450BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFB11315E4761E00D450BC /* main.m */; };
 		82DFB11815E4761E00D450BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFB11715E4761E00D450BC /* AppDelegate.m */; };
-		82DFB11B15E4761E00D450BC /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82DFB11915E4761E00D450BC /* MainStoryboard_iPhone.storyboard */; };
-		82DFB11E15E4761E00D450BC /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82DFB11C15E4761E00D450BC /* MainStoryboard_iPad.storyboard */; };
 		82DFB12915E4761E00D450BC /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFB12815E4761E00D450BC /* SenTestingKit.framework */; };
 		82DFB12A15E4761E00D450BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFB10715E4761E00D450BC /* UIKit.framework */; };
 		82DFB12B15E4761E00D450BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFB10915E4761E00D450BC /* Foundation.framework */; };
@@ -70,6 +74,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8269C39315EC3F7800013C49 /* Main_IPhone_Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_IPhone_Storyboard.storyboard; sourceTree = "<group>"; };
+		827658E915EFF69C00D03FA3 /* CaptureViewControllerLoaLoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureViewControllerLoaLoa.h; sourceTree = "<group>"; };
+		827658EA15EFF69C00D03FA3 /* CaptureViewControllerLoaLoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureViewControllerLoaLoa.m; sourceTree = "<group>"; };
+		827658ED15F6B48300D03FA3 /* Analysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Analysis.h; sourceTree = "<group>"; };
+		827658EE15F6B48300D03FA3 /* Analysis.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Analysis.mm; sourceTree = "<group>"; };
+		827658F015F6B91600D03FA3 /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+OpenCV.h"; path = "../../../../Downloads/aptogo-OpenCVForiPhone-cb262eb/OpenCVClient/UIImage+OpenCV.h"; sourceTree = "<group>"; };
+		827658F115F6B91600D03FA3 /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "UIImage+OpenCV.mm"; path = "../../../../Downloads/aptogo-OpenCVForiPhone-cb262eb/OpenCVClient/UIImage+OpenCV.mm"; sourceTree = "<group>"; };
+		827658F315F6B9BC00D03FA3 /* OpenCV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCV.framework; path = "../../../Downloads/aptogo-OpenCVForiPhone-cb262eb/OpenCV.framework"; sourceTree = "<group>"; };
+		827658F515F6BA6900D03FA3 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		82CC31FE15EBED75005AF1B0 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		82CC31FF15EBED75005AF1B0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		82CC320215EBEDA8005AF1B0 /* PictureListMainTableLoaLoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureListMainTableLoaLoa.h; sourceTree = "<group>"; };
@@ -84,8 +97,6 @@
 		82DFB11515E4761E00D450BC /* LoaLoaAugust-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LoaLoaAugust-Prefix.pch"; sourceTree = "<group>"; };
 		82DFB11615E4761E00D450BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		82DFB11715E4761E00D450BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		82DFB11A15E4761E00D450BC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		82DFB11D15E4761E00D450BC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		82DFB12715E4761E00D450BC /* LoaLoaAugustTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoaLoaAugustTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82DFB12815E4761E00D450BC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		82DFB13015E4761E00D450BC /* LoaLoaAugustTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LoaLoaAugustTests-Info.plist"; sourceTree = "<group>"; };
@@ -148,6 +159,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				827658F615F6BA6900D03FA3 /* libz.dylib in Frameworks */,
+				827658F415F6B9BC00D03FA3 /* OpenCV.framework in Frameworks */,
 				82DFB19915E4777D00D450BC /* CoreData.framework in Frameworks */,
 				82DFB10C15E4761E00D450BC /* CoreGraphics.framework in Frameworks */,
 				82DFB19715E4777000D450BC /* AVFoundation.framework in Frameworks */,
@@ -176,6 +189,8 @@
 		82DFB0F815E4761E00D450BC = {
 			isa = PBXGroup;
 			children = (
+				827658F515F6BA6900D03FA3 /* libz.dylib */,
+				827658F315F6B9BC00D03FA3 /* OpenCV.framework */,
 				82DFB19815E4777C00D450BC /* CoreData.framework */,
 				82DFB19615E4777000D450BC /* AVFoundation.framework */,
 				82DFB19415E4776C00D450BC /* CoreMedia.framework */,
@@ -216,13 +231,12 @@
 				82E4260615E6ED7000BCA038 /* Images */,
 				82E425FF15E5A8BF00BCA038 /* LoaLoa */,
 				82DFB11615E4761E00D450BC /* AppDelegate.h */,
+				8269C39315EC3F7800013C49 /* Main_IPhone_Storyboard.storyboard */,
 				82DFB11715E4761E00D450BC /* AppDelegate.m */,
-				82DFB11915E4761E00D450BC /* MainStoryboard_iPhone.storyboard */,
 				82CC31FE15EBED75005AF1B0 /* ViewController.h */,
 				82CC320215EBEDA8005AF1B0 /* PictureListMainTableLoaLoa.h */,
 				82CC320315EBEDA8005AF1B0 /* PictureListMainTableLoaLoa.m */,
 				82CC31FF15EBED75005AF1B0 /* ViewController.m */,
-				82DFB11C15E4761E00D450BC /* MainStoryboard_iPad.storyboard */,
 				82DFB10E15E4761E00D450BC /* Supporting Files */,
 			);
 			path = LoaLoaAugust;
@@ -329,7 +343,13 @@
 			isa = PBXGroup;
 			children = (
 				82E4260115E5AB2700BCA038 /* LoaLoaStoryboard.storyboard */,
+				827658E915EFF69C00D03FA3 /* CaptureViewControllerLoaLoa.h */,
 				82E4260315E5AD4B00BCA038 /* LoaLoaViewController.h */,
+				827658F015F6B91600D03FA3 /* UIImage+OpenCV.h */,
+				827658F115F6B91600D03FA3 /* UIImage+OpenCV.mm */,
+				827658EA15EFF69C00D03FA3 /* CaptureViewControllerLoaLoa.m */,
+				827658ED15F6B48300D03FA3 /* Analysis.h */,
+				827658EE15F6B48300D03FA3 /* Analysis.mm */,
 				82E4260415E5AD4B00BCA038 /* LoaLoaViewController.m */,
 			);
 			name = LoaLoa;
@@ -421,8 +441,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				82DFB11215E4761E00D450BC /* InfoPlist.strings in Resources */,
-				82DFB11B15E4761E00D450BC /* MainStoryboard_iPhone.storyboard in Resources */,
-				82DFB11E15E4761E00D450BC /* MainStoryboard_iPad.storyboard in Resources */,
 				82DFB17215E476F600D450BC /* CellScope-Info.plist in Resources */,
 				82DFB17415E476F600D450BC /* CellScopePadStoryboard.storyboard in Resources */,
 				82DFB17515E476F600D450BC /* CellScopePhoneStoryboard.storyboard in Resources */,
@@ -438,6 +456,7 @@
 				82E4261315E6EDFE00BCA038 /* sample_prep_A.png in Resources */,
 				82E4261415E6EDFE00BCA038 /* sample_prep_B.png in Resources */,
 				82E4261615E6EDFE00BCA038 /* sample_prep_C.png in Resources */,
+				8269C39415EC3F7800013C49 /* Main_IPhone_Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +509,9 @@
 				82E4260515E5AD4B00BCA038 /* LoaLoaViewController.m in Sources */,
 				82CC320015EBED75005AF1B0 /* ViewController.m in Sources */,
 				82CC320415EBEDA8005AF1B0 /* PictureListMainTableLoaLoa.m in Sources */,
+				827658EB15EFF69C00D03FA3 /* CaptureViewControllerLoaLoa.m in Sources */,
+				827658EF15F6B48300D03FA3 /* Analysis.mm in Sources */,
+				827658F215F6B91600D03FA3 /* UIImage+OpenCV.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,22 +540,6 @@
 				82DFB11115E4761E00D450BC /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		82DFB11915E4761E00D450BC /* MainStoryboard_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				82DFB11A15E4761E00D450BC /* en */,
-			);
-			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		82DFB11C15E4761E00D450BC /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				82DFB11D15E4761E00D450BC /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		82DFB13115E4761E00D450BC /* InfoPlist.strings */ = {
@@ -609,6 +615,10 @@
 		82DFB13A15E4761E00D450BC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Downloads/aptogo-OpenCVForiPhone-cb262eb\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LoaLoaAugust/LoaLoaAugust-Prefix.pch";
 				INFOPLIST_FILE = "LoaLoaAugust/LoaLoaAugust-Info.plist";
@@ -621,6 +631,10 @@
 		82DFB13B15E4761E00D450BC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Downloads/aptogo-OpenCVForiPhone-cb262eb\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LoaLoaAugust/LoaLoaAugust-Prefix.pch";
 				INFOPLIST_FILE = "LoaLoaAugust/LoaLoaAugust-Info.plist";

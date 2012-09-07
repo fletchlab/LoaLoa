@@ -7,16 +7,21 @@
 //
 
 #import "PictureListMainTableLoaLoa.h"
+#import "LoaLoaViewController.h"
+#import "AppDelegate.h"
 
 @interface PictureListMainTableLoaLoa ()
 
 @end
 
 @implementation PictureListMainTableLoaLoa
-
 - (void)loaLoaButtonPressed:(id)sender {
     UIStoryboard *LoaLoaStoryboard = [UIStoryboard storyboardWithName:@"LoaLoaStoryboard" bundle:nil];
-    UIViewController *initialLoaLoaViewController=[LoaLoaStoryboard instantiateInitialViewController];
+    UINavigationController *initialLoaLoaViewController=[LoaLoaStoryboard instantiateInitialViewController];
+    NSArray *viewControllerArray = [initialLoaLoaViewController viewControllers];
+    LoaLoaViewController *initialVC=[viewControllerArray objectAtIndex:0];
+    initialVC.managedObjectContext=self.managedObjectContext;
+    initialVC.userContext=self.userContext;
     initialLoaLoaViewController.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
     [self presentModalViewController:initialLoaLoaViewController animated:YES];
 }
@@ -36,13 +41,28 @@
     // Do any additional setup after loading the view.
 
     [super viewDidLoad];
-    NSLog(@"in loaloa viewdidload");
+    NSLog(@"in piclistmaintableloaloa viewdidload");
+    /*if (managedObjectContext == nil)
+    {
+        managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+        NSLog(@"managedobjectcontext set");
 
-    /*UIBarButtonItem *loaLoaButtonPointer=[[UIBarButtonItem alloc] initWithTitle:@"LoaLoa" style:(UIBarButtonItemStyleDone) target:self action:@selector(loaLoaButtonPressed:)];
-    UIBarButtonItem *logoutButtonPointer=[[UIBarButtonItem alloc] initWithTitle:@"Log" style:(UIBarButtonItemStyleDone) target:self action:@selector(logoutButtonPressed:)];
+    }
+    if (managedObjectContext == nil)
+    {
+        NSLog(@"managedobjectcontext nill");
+
+    }
+    managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    managedObjectContext=[[AppDelegate sharedAppDelegate] managedObjectContext];
+    */
+    //managedObjectModel=[[AppDelegate sharedAppDelegate] managedObjectModel];
+
+    UIBarButtonItem *loaLoaButtonPointer=[[UIBarButtonItem alloc] initWithTitle:@"LoaLoa" style:(UIBarButtonItemStyleDone) target:self action:@selector(loaLoaButtonPressed:)];
+    UIBarButtonItem *logoutButtonPointer=[[UIBarButtonItem alloc] initWithTitle:@"Logout" style:(UIBarButtonItemStyleDone) target:self action:@selector(logoutButtonPressed:)];
     NSArray *buttonArray=[[NSArray alloc] initWithObjects:logoutButtonPointer,loaLoaButtonPointer, nil];
     self.navigationItem.leftBarButtonItems=buttonArray;
-     */
+     
 
 }
 
