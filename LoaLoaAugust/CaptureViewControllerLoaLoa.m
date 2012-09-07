@@ -12,6 +12,8 @@
 #import "CSUserContext.h"
 #import <ImageIO/ImageIO.h>
 #import "Analysis.h"
+#import <AssetsLibrary/AssetsLibrary.h>
+
 
 
 @interface CaptureViewControllerLoaLoa ()
@@ -22,6 +24,17 @@
 @synthesize stillOutput;
 @synthesize progressBar;
 @synthesize loaLoaCounter;
+@synthesize input;
+@synthesize videoPreviewOutput, videoHDOutput;
+@synthesize assetWriter;
+@synthesize pixelBufferAdaptor ;
+@synthesize assetWriterInput;
+@synthesize outputURL;
+BOOL recording=FALSE;
+int frameNumber=0;
+
+
+
 NSTimer *myTimer;
 int i;
 //@synthesize previewLayer;
@@ -35,7 +48,232 @@ int i;
     return self;
 }
 
+
 - (void)viewDidLoad
+{
+    progressBar.progress = 0.0;
+
+    //[super viewDidLoad];
+	
+    /*// Setup the AV foundation capture session
+    self.session = [[AVCaptureSession alloc] init];
+    self.session.sessionPreset = AVCaptureSessionPresetPhoto;
+    
+    self.device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    self.input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:nil];
+    
+    // Setup image preview layer
+    CALayer *viewLayer = self.previewLayer.layer;
+    AVCaptureVideoPreviewLayer *captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession: self.session];
+    
+    captureVideoPreviewLayer.frame = viewLayer.bounds;
+    [viewLayer addSublayer:captureVideoPreviewLayer];
+    
+    // Setup still image output
+    self.stillOutput = [[AVCaptureStillImageOutput alloc] init];
+    NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys: AVVideoCodecJPEG, AVVideoCodecKey, nil];
+    [self.stillOutput setOutputSettings:outputSettings];
+    */
+    
+    // Add session input and output
+    //[self.session addInput:self.input];
+    //[self.session addOutput:self.stillOutput];
+    
+    //[self.session startRunning];
+
+
+
+    // Setup input and output devices
+    self.input = [AVCaptureDeviceInput deviceInputWithDevice:[AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo] error:nil];
+    
+    // Lock the focus
+    BOOL focusSupported = [input.device isFocusModeSupported:AVCaptureFocusModeLocked] &
+    [input.device lockForConfiguration:nil];
+    
+    if (focusSupported) {
+        [input.device setFocusMode:AVCaptureFocusModeLocked];
+        [input.device unlockForConfiguration];
+    }
+    
+    self.VideoHDOutput = [[AVCaptureVideoDataOutput alloc] init];
+    
+    // Process frames while dispatch queue is occupied?
+    self.videoHDOutput.alwaysDiscardsLateVideoFrames = YES;
+    
+    // Set the pixel type for the captured video
+    NSString* key = (NSString*) kCVPixelBufferPixelFormatTypeKey;
+    NSNumber* value = [NSNumber numberWithUnsignedInt:kCVPixelFormatType_32BGRA];
+    NSDictionary* videoSettings = [NSDictionary dictionaryWithObject:value forKey:key];
+    [self.videoHDOutput setVideoSettings:videoSettings];
+    
+    // Create the capture session
+    self.session = [[AVCaptureSession alloc] init];
+    
+    //set up the preview layer
+    // Setup image preview layer
+    CALayer *viewLayer = self.previewLayer.layer;
+    AVCaptureVideoPreviewLayer *captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession: self.session];
+    
+    captureVideoPreviewLayer.frame = viewLayer.bounds;
+    [viewLayer addSublayer:captureVideoPreviewLayer];
+
+    
+    // Add input and output to the session
+    [self.session addInput:input];
+    [self.session addOutput:videoHDOutput];
+    
+    //Set frame rate (if requried)
+    AVCaptureConnection *captureConnection = [videoHDOutput connectionWithMediaType:AVMediaTypeVideo];
+	CMTimeShow(captureConnection.videoMinFrameDuration);
+	CMTimeShow(captureConnection.videoMaxFrameDuration);
+	if (captureConnection.supportsVideoMinFrameDuration)
+		captureConnection.videoMinFrameDuration = CMTimeMake(1, 30);
+	if (captureConnection.supportsVideoMaxFrameDuration)
+		captureConnection.videoMaxFrameDuration = CMTimeMake(1, 30);
+    CMTimeShow(captureConnection.videoMinFrameDuration);
+    CMTimeShow(captureConnection.videoMaxFrameDuration);
+    
+    
+    // Set capture quality
+    [self.session setSessionPreset:AVCaptureSessionPresetPhoto];
+    
+    //Check size based configs are supported before setting them
+    //if ([captureSession canSetSessionPreset:AVCaptureSessionPreset1280x720])
+    //    [captureSession setSessionPreset:AVCaptureSessionPreset1280x720];
+    if([self.session canSetSessionPreset:AVCaptureSessionPreset640x480])
+        [self.session setSessionPreset:AVCaptureSessionPreset640x480];
+    
+    /* set the video output to 1280x720 or 640x480 in H.264, via an asset writer */
+    //720p on iphone4 is way to slow
+    NSDictionary *outputSettings;
+    /*if ([captureSession canSetSessionPreset:AVCaptureSessionPreset1280x720]){
+     
+     outputSettings =
+     [NSDictionary dictionaryWithObjectsAndKeys:
+     [NSNumber numberWithInt:1280], AVVideoWidthKey,
+     [NSNumber numberWithInt:720], AVVideoHeightKey,
+     AVVideoCodecH264, AVVideoCodecKey,
+     nil];
+     }*/
+    if ([self.session canSetSessionPreset:AVCaptureSessionPreset640x480]){
+        outputSettings =
+        [NSDictionary dictionaryWithObjectsAndKeys:
+         [NSNumber numberWithInt:640], AVVideoWidthKey,
+         [NSNumber numberWithInt:480], AVVideoHeightKey,
+         AVVideoCodecH264, AVVideoCodecKey,
+         nil];
+        
+    }
+    //set up the assetwriter input
+    assetWriterInput = [AVAssetWriterInput
+                        assetWriterInputWithMediaType:AVMediaTypeVideo
+                        outputSettings:outputSettings];
+    
+    // set up the AVAssetWriterPixelBufferAdaptor to expect 32BGRA input
+    pixelBufferAdaptor =
+    [[AVAssetWriterInputPixelBufferAdaptor alloc]
+     initWithAssetWriterInput:assetWriterInput
+     sourcePixelBufferAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [NSNumber numberWithInt:kCVPixelFormatType_32BGRA],
+      kCVPixelBufferPixelFormatTypeKey,
+      nil]];
+    
+    //set out file url
+    NSString *outputPath = [[NSString alloc] initWithFormat:@"%@%@", NSTemporaryDirectory(), @"output.mov"];
+    outputURL = [[NSURL alloc] initFileURLWithPath:outputPath];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:outputPath])
+    {
+        NSError *error;
+        if ([fileManager removeItemAtPath:outputPath error:&error] == NO)
+        {
+            NSLog(@"output error");
+        }
+    }
+    /*set the input so that it tries to avoid being unavailable at inopportune moments as it is going in real time */
+    assetWriterInput.expectsMediaDataInRealTime = YES;
+    
+    // Configure your output.
+    dispatch_queue_t queue = dispatch_queue_create("myQueue", NULL);
+    [videoHDOutput setSampleBufferDelegate:self queue:queue];
+    dispatch_release(queue);
+    [self.session startRunning];
+    
+}
+
+
+
+- (void) videoHDOutput:(AVCaptureOutput *)videoHDOutput
+ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
+        fromConnection:(AVCaptureConnection *)connection
+{
+    NSLog(@"in sample buffer delegate");
+
+    if (recording==TRUE){
+        CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+        //NSLog(@"in capture output");
+        //add current imageBuffer to our pixelbufferadaptor
+        //static int64_t frameNumber = 0;
+        if(assetWriterInput.readyForMoreMediaData){
+            //NSLog(@"adding imagebuffer %i",frameNumber);
+            [pixelBufferAdaptor appendPixelBuffer:imageBuffer
+                             withPresentationTime:CMTimeMake(frameNumber, 30)];
+        }
+        
+        if ((frameNumber % 30)==0){
+            //this block puts the current image buffer into NSData.  Right now, stick with converting it to UIImage
+            /*
+             //get the byte data from sampleBuffer in an NSData
+             CVPixelBufferLockBaseAddress(imageBuffer, 0);
+             size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
+             //size_t width = CVPixelBufferGetWidth(imageBuffer);
+             size_t height = CVPixelBufferGetHeight(imageBuffer);
+             void *src_buff = CVPixelBufferGetBaseAddress(imageBuffer);
+             
+             NSData *data = [NSData dataWithBytes:src_buff length:bytesPerRow * height];
+             [analysis_object addImage:curr_image];
+             
+             UIImage *curr_image = [self imageFromSampleBuffer:sampleBuffer];
+             
+             CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
+             */
+            UIImage *curr_image = [self imageFromSampleBuffer:sampleBuffer];
+            
+            [loaLoaCounter addImage:curr_image];
+            
+            
+        }
+        frameNumber++;
+        if (frameNumber>30) {
+            recording=FALSE;
+            [self finishVideo];
+        }
+            
+    }
+}
+
+- (void) finishVideo{
+    NSLog(@"stop recording");
+    if(recording) {
+        recording=FALSE;
+        [assetWriter finishWriting];
+        ALAssetsLibrary * library = [[ALAssetsLibrary alloc] init];
+        
+        if ([library videoAtPathIsCompatibleWithSavedPhotosAlbum:outputURL]) {
+            [library writeVideoAtPathToSavedPhotosAlbum:outputURL
+                                        completionBlock:^(NSURL *assetURL, NSError *error)
+             {
+                 if (error)
+                 {
+                     
+                 }
+             }];
+        }
+    }
+}
+
+/*- (void)viewDidLoad
 {
     //progressBar.frame = CGRectMake(20, 20, 200, 15);
     //[previewLayer addSubview:progressBar];
@@ -47,7 +285,7 @@ int i;
 	// Do any additional setup after loading the view.
     [super viewDidLoad];
     
-}
+}*/
 
 - (void)viewDidUnload
 {
@@ -64,6 +302,50 @@ int i;
                                                       selector: @selector(captureImage:) userInfo: nil repeats: YES];
     }
 
+-(IBAction) captureMovie:(id)sender
+{
+    NSLog(@"record button pressed");
+    if(!recording) {
+        NSLog(@"start recording");
+
+        [progressBar setProgress:0.0];
+        loaLoaCounter=[[Analysis alloc] init];
+        //tell the delegate to start listening to the video output
+
+        recording=TRUE;
+
+        //reset the frame number
+        frameNumber=0;
+        //create our analysis object to which we will send data
+        
+        //delete files in temp folder
+        NSFileManager* fileManager = [NSFileManager defaultManager];
+        // get all files in the temp folder
+        NSArray* files = [fileManager   contentsOfDirectoryAtPath:NSTemporaryDirectory() error:nil];
+        // delete
+        for (int i=0; i<[files count]; i++)
+        {
+            NSString* fileName = [files objectAtIndex:i];
+            [fileManager removeItemAtPath:[NSString stringWithFormat:@"%@/%@", NSTemporaryDirectory(), fileName] error:nil];
+        }
+        
+        //create assetwriter H.264 within the normal MPEG4 container
+        assetWriter = [[AVAssetWriter alloc]
+                       initWithURL:outputURL
+                       fileType:
+                       AVFileTypeMPEG4
+                       error:nil
+                       ];
+        [assetWriter addInput:assetWriterInput];
+        
+        
+        [assetWriter startWriting];
+        [assetWriter startSessionAtSourceTime:kCMTimeZero];
+        
+    }
+
+
+}
 
 -(void) captureImage:(NSTimer*) t
 {
@@ -136,10 +418,52 @@ int i;
     i=i+1;
 }
 
+- (UIImage *) imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer
+{
+    // Get a CMSampleBuffer's Core Video image buffer for the media data
+    CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+    // Lock the base address of the pixel buffer
+    CVPixelBufferLockBaseAddress(imageBuffer, 0);
+    
+    // Get the number of bytes per row for the pixel buffer
+    void *baseAddress = CVPixelBufferGetBaseAddress(imageBuffer);
+    
+    // Get the number of bytes per row for the pixel buffer
+    size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
+    // Get the pixel buffer width and height
+    size_t width = CVPixelBufferGetWidth(imageBuffer);
+    size_t height = CVPixelBufferGetHeight(imageBuffer);
+    
+    // Create a device-dependent RGB color space
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    
+    // Create a bitmap graphics context with the sample buffer data
+    CGContextRef context = CGBitmapContextCreate(baseAddress, width, height, 8,
+                                                 bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
+    // Create a Quartz image from the pixel data in the bitmap graphics context
+    CGImageRef quartzImage = CGBitmapContextCreateImage(context);
+    // Unlock the pixel buffer
+    CVPixelBufferUnlockBaseAddress(imageBuffer,0);
+    
+    // Free up the context and color space
+    CGContextRelease(context);
+    CGColorSpaceRelease(colorSpace);
+    
+    // Create an image object from the Quartz image
+    UIImage *image = [UIImage imageWithCGImage:quartzImage];
+    
+    // Release the Quartz image
+    CGImageRelease(quartzImage);
+    
+    return (image);
+}
+
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
 
 @end

@@ -14,6 +14,12 @@
 
 
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
+@property (nonatomic, retain) AVAssetWriter *assetWriter;
+@property (nonatomic, retain) AVAssetWriterInputPixelBufferAdaptor *pixelBufferAdaptor ;
+@property (nonatomic, retain) AVAssetWriterInput *assetWriterInput;
+@property (nonatomic, retain) NSURL *outputURL;
+
+
 
 
 
