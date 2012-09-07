@@ -25,6 +25,8 @@
 
 -(void)addImage: (UIImage*) image{
     [array addObject: image];
+    if ([array count]==5)
+        [self analyzeImages];
     
 }
 
@@ -125,7 +127,7 @@
             cv::Mat imgMat(&IplBW);  //Construct an Mat image "img" out of an IplImage
             UIImage *outImagebwopen;
             outImagebwopen = [[UIImage alloc] initWithCVMat:imgMat];
-            UIImageWriteToSavedPhotosAlbum(outImagebwopen, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+            //UIImageWriteToSavedPhotosAlbum(outImagebwopen, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
             
             NSLog(@"num countours:%i", numContours);
             NSLog(@"analysis complete");

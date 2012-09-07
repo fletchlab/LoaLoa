@@ -58,15 +58,20 @@ int i;
 -(IBAction) captureImages:(id)sender
 {
     [progressBar setProgress:0.0];
-    i=0;
+    i=1;
     loaLoaCounter=[[Analysis alloc] init];
-    myTimer= [NSTimer scheduledTimerWithTimeInterval: .5 target: self
+    myTimer= [NSTimer scheduledTimerWithTimeInterval: .75 target: self
                                                       selector: @selector(captureImage:) userInfo: nil repeats: YES];
     }
 
 
 -(void) captureImage:(NSTimer*) t
 {
+    if (i==5){
+        [myTimer invalidate];
+        myTimer=nil;
+    }
+
     AVCaptureConnection *videoConnection = nil;
 	for (AVCaptureConnection *connection in stillOutput.connections)
 	{
@@ -129,14 +134,6 @@ int i;
          
      }];
     i=i+1;
-    if (i>5){
-        [myTimer invalidate];
-        myTimer=nil;
-        //int numLoaLoa=[loaLoaCounter analyzeImages];
-        //NSLog(@"Detected Countours: %i", numLoaLoa);
-
-        
-    }
 }
 
 
