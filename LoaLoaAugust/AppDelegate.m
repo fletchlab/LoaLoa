@@ -35,7 +35,7 @@
         // Add our default user object in Core Data
         Users *user = (Users*)[NSEntityDescription insertNewObjectForEntityForName:@"Users" inManagedObjectContext:self.managedObjectContext];
         
-        [user setUsername:@"administrator"];
+        [user setUsername:@"admin"];
         [user setPassword:@"default"];
         
         // Commit to core data
