@@ -25,7 +25,7 @@
 
 -(void)addImage: (UIImage*) image{
     [array addObject: image];
-    if ([array count]==5)
+    if ([array count]==3)
         [self analyzeImages];
     
 }

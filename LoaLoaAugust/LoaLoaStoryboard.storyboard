@@ -508,7 +508,7 @@
                                     <barButtonItem systemItem="camera" id="Dcw-3t-GNR">
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <connections>
-                                            <action selector="captureImages:" destination="O7v-mg-DcO" id="TKT-uq-Tu7"/>
+                                            <action selector="captureMovie:" destination="O7v-mg-DcO" id="ju5-Ia-Bak"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="y3V-BU-YHW"/>
