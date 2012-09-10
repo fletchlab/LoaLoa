@@ -58,12 +58,6 @@
     */
     //managedObjectModel=[[AppDelegate sharedAppDelegate] managedObjectModel];
 
-    UIBarButtonItem *loaLoaButtonPointer=[[UIBarButtonItem alloc] initWithTitle:@"LoaLoa" style:(UIBarButtonItemStyleDone) target:self action:@selector(loaLoaButtonPressed:)];
-    UIBarButtonItem *logoutButtonPointer=[[UIBarButtonItem alloc] initWithTitle:@"Logout" style:(UIBarButtonItemStyleDone) target:self action:@selector(logoutButtonPressed:)];
-    NSArray *buttonArray=[[NSArray alloc] initWithObjects:logoutButtonPointer,loaLoaButtonPointer, nil];
-    self.navigationItem.leftBarButtonItems=buttonArray;
-     
-
 }
 
 - (void)viewDidUnload
