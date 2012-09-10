@@ -212,7 +212,7 @@ int i;
     // NSLog(@"in sample buffer delegate");
     
     if (recording==TRUE){
-        NSLog(@"recording");
+        NSLog(@"recording %i", frameNumber);
         
         CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
         //NSLog(@"in capture output");
@@ -224,7 +224,7 @@ int i;
                              withPresentationTime:CMTimeMake(frameNumber, 30)];
         }
         
-        if ((frameNumber % 30)==0 && frameNumber<=90){
+        if ((frameNumber % 30)==0 && frameNumber<=120){
             //this block puts the current image buffer into NSData.  Right now, stick with converting it to UIImage
             /*
              //get the byte data from sampleBuffer in an NSData
@@ -242,7 +242,13 @@ int i;
              CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
              */
             UIImage *curr_image = [self imageFromSampleBuffer:sampleBuffer];
-            if (frameNumber==90)  {
+            //[progressBar setProgress:progressBar.progress+0.2];
+            [self performSelectorInBackground:@selector(updateProgress) withObject:nil];
+
+            //[[NSRunLoop currentRunLoop] runUntilDate:[NSDate date]];
+
+
+            if (frameNumber==120)  {
                 
                 
                 recording=FALSE;
@@ -250,7 +256,7 @@ int i;
                 NSLog(@"done recording");
                 
             }
-            else
+            
                 [loaLoaCounter addImage:curr_image];
         }
         
@@ -259,7 +265,10 @@ int i;
         
     }
 }
+-(void) updateProgress{
+    [progressBar setProgress:progressBar.progress+0.12];
 
+}
 - (void) finishVideo{
     NSLog(@"stop recording");
     if(!recording) {
@@ -305,8 +314,26 @@ int i;
     [progressBar setProgress:0.0];
     i=1;
     loaLoaCounter=[[Analysis alloc] init];
+    loaLoaCounter.userContext = self.userContext;
+    loaLoaCounter.managedObjectContext = self.managedObjectContext;
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(eventHandler:)
+     name:@"eventType"
+     object:nil ];
+
+
+
     myTimer= [NSTimer scheduledTimerWithTimeInterval: .75 target: self
                                             selector: @selector(captureImage:) userInfo: nil repeats: YES];
+}
+
+
+-(void)eventHandler: (NSNotification *) notification
+{
+    NSLog(@"notification from analysis");
+    [self performSelectorInBackground:@selector(updateProgress) withObject:nil];
+
 }
 
 -(IBAction) captureMovie:(id)sender
@@ -318,7 +345,16 @@ int i;
         [progressBar setProgress:0.0];
         loaLoaCounter=[[Analysis alloc] init];
         //tell the delegate to start listening to the video output
+        loaLoaCounter.userContext = self.userContext;
+        loaLoaCounter.managedObjectContext = self.managedObjectContext;
+        [[NSNotificationCenter defaultCenter]
+         addObserver:self
+         selector:@selector(eventHandler:)
+         name:@"eventType"
+         object:nil ];
+
         
+
         recording=TRUE;
         
         //reset the frame number

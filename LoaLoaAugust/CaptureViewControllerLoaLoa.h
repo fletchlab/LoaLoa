@@ -12,7 +12,6 @@
 @interface CaptureViewControllerLoaLoa : CaptureViewController
 @property Analysis *loaLoaCounter;
 
-
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 @property (nonatomic, retain) AVAssetWriter *assetWriter;
 @property (nonatomic, retain) AVAssetWriterInputPixelBufferAdaptor *pixelBufferAdaptor ;

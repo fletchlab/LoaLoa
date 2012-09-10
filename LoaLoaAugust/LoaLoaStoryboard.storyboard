@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="tPI-F4-lnq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="tPI-F4-lnq">
     <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
@@ -82,7 +83,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="RZV-U0-QGt" kind="modal" id="Qq5-K1-6Ov"/>
+                                    <segue destination="RZV-U0-QGt" kind="modal" identifier="LoaLoaInst2" id="Qq5-K1-6Ov"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -135,7 +136,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="v7T-Mk-7gJ" kind="modal" id="Hjt-BR-AI8"/>
+                                    <segue destination="v7T-Mk-7gJ" kind="modal" identifier="LoaLoaInst3" id="Hjt-BR-AI8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -188,7 +189,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="WeE-l0-I6i" kind="modal" id="czD-zD-sji"/>
+                                    <segue destination="WeE-l0-I6i" kind="modal" identifier="LoaLoaInst5" id="czD-zD-sji"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -303,7 +304,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="GCX-jz-9hU" kind="push" id="FhU-PP-Ipl"/>
+                                            <segue destination="GCX-jz-9hU" kind="push" identifier="LoaLoaInst0" id="FhU-PP-Ipl"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="101" id="bx8-04-BkH">
@@ -508,7 +509,7 @@
                                     <barButtonItem systemItem="camera" id="Dcw-3t-GNR">
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <connections>
-                                            <action selector="captureMovie:" destination="O7v-mg-DcO" id="ju5-Ia-Bak"/>
+                                            <action selector="captureMovie:" destination="O7v-mg-DcO" id="01G-sP-u5o"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="y3V-BU-YHW"/>
@@ -654,39 +655,6 @@
         <image name="sample_prep_C.png" width="1333" height="2000"/>
         <image name="users.png" width="256" height="256"/>
     </resources>
-    <classes>
-        <class className="CaptureViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CaptureViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="captureImage:"/>
-                <relationship kind="action" name="closeCapture:"/>
-                <relationship kind="outlet" name="lastCaptured" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="previewLayer" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="CaptureViewControllerLoaLoa" superclassName="CaptureViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CaptureViewControllerLoaLoa.h"/>
-            <relationships>
-                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
-            </relationships>
-        </class>
-        <class className="LLLoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LLLoginViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="LLMainMenuViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LLMainMenuViewController.h"/>
-        </class>
-        <class className="LoaLoaViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoaLoaViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="mainAppButtonPressed:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

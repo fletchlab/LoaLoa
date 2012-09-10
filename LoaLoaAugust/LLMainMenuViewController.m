@@ -7,6 +7,7 @@
 //
 
 #import "LLMainMenuViewController.h"
+#import "LoaLoaViewController.h"
 
 @interface LLMainMenuViewController ()
 
@@ -41,6 +42,19 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if([segue.identifier isEqualToString:@"LoaLoaInst0"]) {
+        // Get a reference to the capture view
+        LoaLoaViewController *lvc=(LoaLoaViewController*)[segue destinationViewController];
+        lvc.userContext = self.userContext;
+        lvc.managedObjectContext = self.managedObjectContext;
+        NSLog(@"transfered db to next loaloavc");
+    }
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

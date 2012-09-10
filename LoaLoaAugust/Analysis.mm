@@ -9,6 +9,11 @@
 
 #import "Analysis.h"
 #import "UIImage+OpenCV.h"
+#import "CSUserContext.h"
+#import "Pictures.h"
+#import "UIImage+Resize.h"
+
+
 
 
 @implementation Analysis
@@ -25,7 +30,7 @@
 
 -(void)addImage: (UIImage*) image{
     [array addObject: image];
-    if ([array count]==3)
+    if ([array count]==5)
         [self analyzeImages];
     
 }
@@ -127,10 +132,33 @@
             cv::Mat imgMat(&IplBW);  //Construct an Mat image "img" out of an IplImage
             UIImage *outImagebwopen;
             outImagebwopen = [[UIImage alloc] initWithCVMat:imgMat];
-            //UIImageWriteToSavedPhotosAlbum(outImagebwopen, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+            if (y==1){
+            UIImage* thumbnail = [outImagebwopen thumbnailImage:80.0 transparentBorder:1.0 cornerRadius:1.0 interpolationQuality:kCGInterpolationDefault];
+
+            UIImageWriteToSavedPhotosAlbum(outImagebwopen, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+            // If we are adding a new picture then create an entry
+            Pictures* picture = (Pictures *)[NSEntityDescription insertNewObjectForEntityForName:@"Pictures" inManagedObjectContext:self.managedObjectContext];
+            NSString *description= [NSString stringWithFormat:@"%i", numContours];
+
+            // Set the picture properties
+            picture.title = @"Default";
+            picture.desc = description;
+            picture.date = [NSDate date];
+            picture.user = self.userContext.username;
+            picture.sharing = self.userContext.sharing;
+            picture.smallPicture = UIImagePNGRepresentation(thumbnail);
             
+            //if (![self.managedObjectContext save:&error]) {
+            //    NSLog(@"Failed to add new picture with error: %@", [error domain]);
+            //}
+            
+
+            }
             NSLog(@"num countours:%i", numContours);
             NSLog(@"analysis complete");
+            [[NSNotificationCenter defaultCenter]
+             postNotificationName:@"eventType"
+             object:nil ];
             
             
             cvReleaseMemStorage( &storage ); // deallocate CvSeq as well.
