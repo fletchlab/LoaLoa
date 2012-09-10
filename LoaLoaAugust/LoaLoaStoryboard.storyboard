@@ -309,7 +309,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yr8-hW-qlP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController definesPresentationContext="YES" id="i1n-mj-9XG" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="qvf-sD-Vmb"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="jlh-dU-7cC">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
