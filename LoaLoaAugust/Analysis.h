@@ -16,11 +16,11 @@
     NSUInteger numberOfRedPixels;
     NSUInteger maxChangePos;
     }
--(void)addImage: (UIImage *) image;
+-(int)addImage: (UIImage *) image;
 
 -(NSMutableArray *)getImageArray;
 
--(int)analyzeImages;
+-(UIImage*)analyzeImages;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) CSUserContext *userContext;
 

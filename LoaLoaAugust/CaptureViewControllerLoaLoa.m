@@ -13,6 +13,7 @@
 #import <ImageIO/ImageIO.h>
 #import "Analysis.h"
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "ReviewViewController.h"
 
 
 
@@ -32,6 +33,8 @@
 @synthesize outputURL;
 BOOL recording=FALSE;
 int frameNumber=0;
+int arraySize=0;
+UIImage *analyzedImage;
 
 
 
@@ -244,20 +247,23 @@ int i;
             UIImage *curr_image = [self imageFromSampleBuffer:sampleBuffer];
             //[progressBar setProgress:progressBar.progress+0.2];
             [self performSelectorInBackground:@selector(updateProgress) withObject:nil];
-
+            
             //[[NSRunLoop currentRunLoop] runUntilDate:[NSDate date]];
-
-
+            
+            
+            
+            arraySize=[loaLoaCounter addImage:curr_image];
             if (frameNumber==120)  {
                 
                 
                 recording=FALSE;
                 [self finishVideo];
                 NSLog(@"done recording");
+                analyzedImage=[loaLoaCounter analyzeImages];
+
                 
             }
-            
-                [loaLoaCounter addImage:curr_image];
+
         }
         
         frameNumber++;
@@ -267,7 +273,7 @@ int i;
 }
 -(void) updateProgress{
     [progressBar setProgress:progressBar.progress+0.12];
-
+    
 }
 - (void) finishVideo{
     NSLog(@"stop recording");
@@ -321,9 +327,9 @@ int i;
      selector:@selector(eventHandler:)
      name:@"eventType"
      object:nil ];
-
-
-
+    
+    
+    
     myTimer= [NSTimer scheduledTimerWithTimeInterval: .75 target: self
                                             selector: @selector(captureImage:) userInfo: nil repeats: YES];
 }
@@ -332,8 +338,9 @@ int i;
 -(void)eventHandler: (NSNotification *) notification
 {
     NSLog(@"notification from analysis");
-    [self performSelectorInBackground:@selector(updateProgress) withObject:nil];
 
+    [self performSelectorInBackground:@selector(updateProgress) withObject:nil];
+    
 }
 
 -(IBAction) captureMovie:(id)sender
@@ -341,7 +348,7 @@ int i;
     NSLog(@"record button pressed");
     if(!recording) {
         NSLog(@"start recording");
-        
+        arraySize=0;
         [progressBar setProgress:0.0];
         loaLoaCounter=[[Analysis alloc] init];
         //tell the delegate to start listening to the video output
@@ -352,9 +359,9 @@ int i;
          selector:@selector(eventHandler:)
          name:@"eventType"
          object:nil ];
-
         
-
+        
+        
         recording=TRUE;
         
         //reset the frame number
@@ -458,6 +465,22 @@ int i;
     i=i+1;
 }
 
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    NSLog(@"in didfinishsaving");
+
+    if (arraySize==5)
+        {
+            analyzedImage=[loaLoaCounter analyzeImages];
+        }
+
+    // Handle error saving image to camera roll
+    if (error != NULL) {
+        NSLog(@"Error saving picture to camera rolll");
+    }
+}
+
+
 - (UIImage *) imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer
 {
     // Get a CMSampleBuffer's Core Video image buffer for the media data
@@ -498,6 +521,22 @@ int i;
     return (image);
 }
 
+- (IBAction)closeCapture:(id)sender {
+    // Close the AV Capture session
+    [self.session stopRunning];
+    
+    // Dismiss the view controller
+    //[self dismissModalViewControllerAnimated:YES];
+    UIStoryboard *MainStoryboard = [UIStoryboard storyboardWithName:@"LoaLoaStoryboard" bundle:nil];
+    ReviewViewController *review=[MainStoryboard instantiateViewControllerWithIdentifier:(NSString *)@"Review"];
+    //NSArray *viewControllerArray = [initialMainViewController viewControllers];
+    //PictureListMainTableLoaLoa *initialVC=[viewControllerArray objectAtIndex:0];
+    review.managedObjectContext=self.managedObjectContext;
+    review.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+    review.differenceImage=analyzedImage;
+    [self presentModalViewController:review animated:YES];
+
+}
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
