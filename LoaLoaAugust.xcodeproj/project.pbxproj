@@ -40,7 +40,11 @@
 		9B190E1115FABEEE002206CF /* sample_prep_A.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B190E0A15FABEEE002206CF /* sample_prep_A.png */; };
 		9B190E1215FABEEE002206CF /* sample_prep_B.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B190E0B15FABEEE002206CF /* sample_prep_B.png */; };
 		9B190E1315FABEEE002206CF /* sample_prep_C.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B190E0C15FABEEE002206CF /* sample_prep_C.png */; };
-		9B589E6215FAA7C700578239 /* OpenCV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B589E6115FAA7C600578239 /* OpenCV.framework */; };
+		9B324D7015FAC3F2007730E8 /* LLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B324D6F15FAC3F2007730E8 /* LLLoginViewController.m */; };
+		9B6625FB15FD6D9500222C2E /* LLMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6625FA15FD6D9500222C2E /* LLMainMenuViewController.m */; };
+		9B6625FD15FD6EAA00222C2E /* diabetes-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B6625FC15FD6EAA00222C2E /* diabetes-icon.png */; };
+		9B6625FF15FD70AC00222C2E /* images icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B6625FE15FD70AC00222C2E /* images icon.png */; };
+		9B66260115FD70DE00222C2E /* users.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B66260015FD70DE00222C2E /* users.png */; };
 		9BB5514B15FAB7FD0014E316 /* CaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5512215FAB7FD0014E316 /* CaptureViewController.m */; };
 		9BB5514C15FAB7FD0014E316 /* CellScope-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BB5512315FAB7FD0014E316 /* CellScope-Info.plist */; };
 		9BB5514D15FAB7FD0014E316 /* CellScope.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5512515FAB7FD0014E316 /* CellScope.xcdatamodeld */; };
@@ -90,6 +94,7 @@
 		9BB551C115FAB86B0014E316 /* NIPagingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB551BC15FAB86B0014E316 /* NIPagingScrollView.m */; };
 		9BB551C315FAB8900014E316 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB551C215FAB8900014E316 /* AssetsLibrary.framework */; };
 		9BB551C415FAB9650014E316 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9B589EFA15FAA95D00578239 /* UIImage+OpenCV.mm */; };
+		9BB6E6BB15FD75AF001B69FB /* OpenCV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB6E6BA15FD75AF001B69FB /* OpenCV.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,9 +150,15 @@
 		9B190E0A15FABEEE002206CF /* sample_prep_A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample_prep_A.png; sourceTree = "<group>"; };
 		9B190E0B15FABEEE002206CF /* sample_prep_B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample_prep_B.png; sourceTree = "<group>"; };
 		9B190E0C15FABEEE002206CF /* sample_prep_C.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample_prep_C.png; sourceTree = "<group>"; };
-		9B589E6115FAA7C600578239 /* OpenCV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCV.framework; path = ../OpenCV.framework; sourceTree = "<group>"; };
+		9B324D6E15FAC3F2007730E8 /* LLLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLLoginViewController.h; sourceTree = "<group>"; };
+		9B324D6F15FAC3F2007730E8 /* LLLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLLoginViewController.m; sourceTree = "<group>"; };
 		9B589EFA15FAA95D00578239 /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "UIImage+OpenCV.mm"; path = "../../../../Downloads/UIImage+OpenCV.mm"; sourceTree = "<group>"; };
 		9B589EFC15FAA9C900578239 /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+OpenCV.h"; path = "../../../../Downloads/UIImage+OpenCV.h"; sourceTree = "<group>"; };
+		9B6625F915FD6D9500222C2E /* LLMainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLMainMenuViewController.h; sourceTree = "<group>"; };
+		9B6625FA15FD6D9500222C2E /* LLMainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLMainMenuViewController.m; sourceTree = "<group>"; };
+		9B6625FC15FD6EAA00222C2E /* diabetes-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "diabetes-icon.png"; sourceTree = "<group>"; };
+		9B6625FE15FD70AC00222C2E /* images icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "images icon.png"; sourceTree = "<group>"; };
+		9B66260015FD70DE00222C2E /* users.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = users.png; sourceTree = "<group>"; };
 		9BB5512115FAB7FD0014E316 /* CaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureViewController.h; sourceTree = "<group>"; };
 		9BB5512215FAB7FD0014E316 /* CaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureViewController.m; sourceTree = "<group>"; };
 		9BB5512315FAB7FD0014E316 /* CellScope-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CellScope-Info.plist"; sourceTree = "<group>"; };
@@ -252,6 +263,7 @@
 		9BB551BE15FAB86B0014E316 /* NIPagingScrollViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIPagingScrollViewDelegate.h; path = ../nimbus/src/pagingscrollview/src/NIPagingScrollViewDelegate.h; sourceTree = "<group>"; };
 		9BB551BF15FAB86B0014E316 /* NIPagingScrollViewPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIPagingScrollViewPage.h; path = ../nimbus/src/pagingscrollview/src/NIPagingScrollViewPage.h; sourceTree = "<group>"; };
 		9BB551C215FAB8900014E316 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		9BB6E6BA15FD75AF001B69FB /* OpenCV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCV.framework; path = ../OpenCV.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,7 +272,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B190E0415FABD48002206CF /* AssetsLibrary.framework in Frameworks */,
-				9B589E6215FAA7C700578239 /* OpenCV.framework in Frameworks */,
 				827658F615F6BA6900D03FA3 /* libz.dylib in Frameworks */,
 				82DFB19915E4777D00D450BC /* CoreData.framework in Frameworks */,
 				82DFB10C15E4761E00D450BC /* CoreGraphics.framework in Frameworks */,
@@ -271,6 +282,7 @@
 				82DFB19115E4776200D450BC /* ImageIO.framework in Frameworks */,
 				82DFB10815E4761E00D450BC /* UIKit.framework in Frameworks */,
 				82DFB10A15E4761E00D450BC /* Foundation.framework in Frameworks */,
+				9BB6E6BB15FD75AF001B69FB /* OpenCV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,8 +325,8 @@
 		82DFB10615E4761E00D450BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9BB6E6BA15FD75AF001B69FB /* OpenCV.framework */,
 				9BB551C215FAB8900014E316 /* AssetsLibrary.framework */,
-				9B589E6115FAA7C600578239 /* OpenCV.framework */,
 				82DFB19815E4777C00D450BC /* CoreData.framework */,
 				82DFB19615E4777000D450BC /* AVFoundation.framework */,
 				82DFB19415E4776C00D450BC /* CoreMedia.framework */,
@@ -379,15 +391,19 @@
 		82E425FF15E5A8BF00BCA038 /* LoaLoa */ = {
 			isa = PBXGroup;
 			children = (
+				9B324D6E15FAC3F2007730E8 /* LLLoginViewController.h */,
+				9B324D6F15FAC3F2007730E8 /* LLLoginViewController.m */,
 				9B589EFC15FAA9C900578239 /* UIImage+OpenCV.h */,
 				9B589EFA15FAA95D00578239 /* UIImage+OpenCV.mm */,
 				82E4260115E5AB2700BCA038 /* LoaLoaStoryboard.storyboard */,
 				827658E915EFF69C00D03FA3 /* CaptureViewControllerLoaLoa.h */,
-				82E4260315E5AD4B00BCA038 /* LoaLoaViewController.h */,
 				827658EA15EFF69C00D03FA3 /* CaptureViewControllerLoaLoa.m */,
+				82E4260315E5AD4B00BCA038 /* LoaLoaViewController.h */,
+				82E4260415E5AD4B00BCA038 /* LoaLoaViewController.m */,
 				827658ED15F6B48300D03FA3 /* Analysis.h */,
 				827658EE15F6B48300D03FA3 /* Analysis.mm */,
-				82E4260415E5AD4B00BCA038 /* LoaLoaViewController.m */,
+				9B6625F915FD6D9500222C2E /* LLMainMenuViewController.h */,
+				9B6625FA15FD6D9500222C2E /* LLMainMenuViewController.m */,
 			);
 			name = LoaLoa;
 			sourceTree = "<group>";
@@ -395,6 +411,9 @@
 		9B190E0515FABEEE002206CF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9B66260015FD70DE00222C2E /* users.png */,
+				9B6625FE15FD70AC00222C2E /* images icon.png */,
+				9B6625FC15FD6EAA00222C2E /* diabetes-icon.png */,
 				9B190E0615FABEEE002206CF /* Focus_A.png */,
 				9B190E0715FABEEE002206CF /* move_Slide_A.png */,
 				9B190E0815FABEEE002206CF /* patient_step_A.png */,
@@ -661,6 +680,9 @@
 				9B190E1115FABEEE002206CF /* sample_prep_A.png in Resources */,
 				9B190E1215FABEEE002206CF /* sample_prep_B.png in Resources */,
 				9B190E1315FABEEE002206CF /* sample_prep_C.png in Resources */,
+				9B6625FD15FD6EAA00222C2E /* diabetes-icon.png in Resources */,
+				9B6625FF15FD70AC00222C2E /* images icon.png in Resources */,
+				9B66260115FD70DE00222C2E /* users.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,6 +764,8 @@
 				9BB551B515FAB8480014E316 /* NIToolbarPhotoViewController.m in Sources */,
 				9BB551C015FAB86B0014E316 /* NIPageView.m in Sources */,
 				9BB551C115FAB86B0014E316 /* NIPagingScrollView.m in Sources */,
+				9B324D7015FAC3F2007730E8 /* LLLoginViewController.m in Sources */,
+				9B6625FB15FD6D9500222C2E /* LLMainMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
