@@ -9,9 +9,19 @@
 
 #import "Analysis.h"
 #import "UIImage+OpenCV.h"
+#import "CSUserContext.h"
+#import "Pictures.h"
+#import "UIImage+Resize.h"
+#import <AssetsLibrary/AssetsLibrary.h>
+
+
+
 
 
 @implementation Analysis
+UIImage *outImagebwopen;
+int numContoursLast;
+
 
 -(id)init
 {
@@ -23,10 +33,11 @@
     return self;
 }
 
--(void)addImage: (UIImage*) image{
+-(int)addImage: (UIImage*) image{
     [array addObject: image];
-    if ([array count]==3)
-        [self analyzeImages];
+    return [array count];
+    //if ([array count]==5)
+        //[self analyzeImages];
     
 }
 
@@ -35,7 +46,7 @@
 }
 
 
-- (int) analyzeImages{
+- (UIImage *) analyzeImages{
     int numContours=0;
     
     NSLog(@"analyzing images");
@@ -125,21 +136,80 @@
             }
             
             cv::Mat imgMat(&IplBW);  //Construct an Mat image "img" out of an IplImage
-            UIImage *outImagebwopen;
             outImagebwopen = [[UIImage alloc] initWithCVMat:imgMat];
-            //UIImageWriteToSavedPhotosAlbum(outImagebwopen, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+            //UIImage *grayscaledUIImage;
+            //grayscaledUIImage= [[UIImage alloc] initWithCVMat:grayscaled];
             
+            CGColorSpaceRef genericColorSpace = CGColorSpaceCreateDeviceRGB();
+            CGContextRef thumbBitmapCtxt = CGBitmapContextCreate(NULL,
+                                                                 outImagebwopen.size.width,
+                                                                 outImagebwopen.size.height,
+                                                                 8, (4 * outImagebwopen.size.width),
+                                                                 genericColorSpace,
+                                                                 kCGImageAlphaPremultipliedFirst);
+            CGColorSpaceRelease(genericColorSpace);
+            CGContextSetInterpolationQuality(thumbBitmapCtxt, kCGInterpolationDefault);
+            CGRect destRect = CGRectMake(0, 0, outImagebwopen.size.width, outImagebwopen.size.height);
+            CGContextDrawImage(thumbBitmapCtxt, destRect, outImagebwopen.CGImage);
+            CGImageRef tmpThumbImage = CGBitmapContextCreateImage(thumbBitmapCtxt);
+            CGContextRelease(thumbBitmapCtxt);
+            UIImage *result = [UIImage imageWithCGImage:tmpThumbImage];
+            CGImageRelease(tmpThumbImage);
+            
+            
+            
+            if (y==4){
+                UIImage* thumbnail = [result thumbnailImage:80.0 transparentBorder:1.0 cornerRadius:1.0 interpolationQuality:kCGInterpolationDefault];
+                
+                UIImageWriteToSavedPhotosAlbum(result, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+                // If we are adding a new picture then create an entry
+                Pictures* picture = (Pictures *)[NSEntityDescription insertNewObjectForEntityForName:@"Pictures" inManagedObjectContext:self.managedObjectContext];
+                if ([self.userContext.sharing isEqualToString:@"Camera Roll"]) {
+                    // Request to save the image to camera roll
+                    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+                    
+                    [library writeImageToSavedPhotosAlbum:image.CGImage orientation:(ALAssetOrientation)[image imageOrientation] completionBlock:^(NSURL *assetURL, NSError *error){
+                        if (error) {
+                            NSLog(@"Error writing image to photo album");
+                        }
+                        else {
+                            picture.path = assetURL.absoluteString;
+                        }
+                    }];
+                }
+                
+                NSString *description= [NSString stringWithFormat:@"%i", numContours];
+                
+                // Set the picture properties
+                picture.title = @"Default";
+                picture.desc = description;
+                picture.date = [NSDate date];
+                picture.user = self.userContext.username;
+                picture.sharing = self.userContext.sharing;
+                picture.smallPicture = UIImagePNGRepresentation(thumbnail);
+                
+                //if (![self.managedObjectContext save:&error]) {
+                //    NSLog(@"Failed to add new picture with error: %@", [error domain]);
+                //}
+                numContoursLast=numContours;
+                
+            }
             NSLog(@"num countours:%i", numContours);
             NSLog(@"analysis complete");
+            [[NSNotificationCenter defaultCenter]
+             postNotificationName:@"eventType"
+             object:nil ];
             
             
             cvReleaseMemStorage( &storage ); // deallocate CvSeq as well.
             cvReleaseImage(&input);
         }
     }
-    return numContours;
+    return outImagebwopen ;
 }
-
+- (int) getNumContours{
+    return numContoursLast;
+}
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
     // Unable to save the image

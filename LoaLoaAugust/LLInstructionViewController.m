@@ -9,6 +9,8 @@
 #import "LLInstructionViewController.h"
 #import "CaptureViewControllerLoaLoa.h"
 #import <QuartzCore/QuartzCore.h>
+#import <AudioToolbox/AudioToolbox.h>
+
 
 @interface LLInstructionViewController ()
 
@@ -19,6 +21,8 @@
 @synthesize userContext;
 @synthesize managedObjectContext;
 @synthesize scrollView;
+AVAudioPlayer *player;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,7 +36,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    AudioSessionInitialize(NULL, NULL, NULL, NULL);
+    UInt32 sessionCategory = kAudioSessionCategory_MediaPlayback;
+    OSStatus err = AudioSessionSetProperty(kAudioSessionProperty_AudioCategory,
+                                           sizeof(sessionCategory),
+                                           &sessionCategory);
+    AudioSessionSetActive(TRUE);
+    if (err) {
+        NSLog(@"AudioSessionSetProperty kAudioSessionProperty_AudioCategory failed: %ld", err);
+    }
+    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: @"somethingwrong" ofType: @"wav"];
+    NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: soundFilePath];
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL error: nil];
+    
+    [player setVolume: 1];    // available range is 0.0 through 1.0
+    [player play];
+
+     
+
 }
 
 - (void)viewDidUnload
@@ -51,7 +72,7 @@
         cvc.userContext = self.userContext;
         cvc.managedObjectContext = self.managedObjectContext;
     }
-    else if([segue.identifier isEqualToString:@"NextInstruction"]) {
+    else /*if([segue.identifier isEqualToString:@"NextInstruction"]) */{
         // Get a reference to the LLInstruction view controller
         LLInstructionViewController *vc = (LLInstructionViewController*)[segue destinationViewController];
         vc.userContext = self.userContext;

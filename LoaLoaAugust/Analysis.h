@@ -7,16 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CSUserContext.h"
+
 
 @interface Analysis : NSObject
 {
     NSMutableArray *array;
     NSUInteger numberOfRedPixels;
     NSUInteger maxChangePos;
-}
--(void)addImage: (UIImage *) image;
+    }
+-(int)addImage: (UIImage *) image;
+-(int)getNumContours;
 
 -(NSMutableArray *)getImageArray;
 
--(int)analyzeImages;
+-(UIImage*)analyzeImages;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) CSUserContext *userContext;
+
 @end
