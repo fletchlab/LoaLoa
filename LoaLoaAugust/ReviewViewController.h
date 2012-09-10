@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CSUserContext.h"
 
-
+int numContours;
 @interface ReviewViewController : UIViewController
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *accept;
 @property (weak, nonatomic) IBOutlet UIButton *reject;
+
 
 
 

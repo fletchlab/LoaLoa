@@ -17,6 +17,7 @@
     NSUInteger maxChangePos;
     }
 -(int)addImage: (UIImage *) image;
+-(int)getNumContours;
 
 -(NSMutableArray *)getImageArray;
 

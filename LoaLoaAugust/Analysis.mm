@@ -20,6 +20,7 @@
 
 @implementation Analysis
 UIImage *outImagebwopen;
+int numContoursLast;
 
 
 -(id)init
@@ -157,7 +158,7 @@ UIImage *outImagebwopen;
             
             
             
-            if (y==1){
+            if (y==4){
                 UIImage* thumbnail = [result thumbnailImage:80.0 transparentBorder:1.0 cornerRadius:1.0 interpolationQuality:kCGInterpolationDefault];
                 
                 UIImageWriteToSavedPhotosAlbum(result, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
@@ -190,7 +191,7 @@ UIImage *outImagebwopen;
                 //if (![self.managedObjectContext save:&error]) {
                 //    NSLog(@"Failed to add new picture with error: %@", [error domain]);
                 //}
-                
+                numContoursLast=numContours;
                 
             }
             NSLog(@"num countours:%i", numContours);
@@ -206,7 +207,9 @@ UIImage *outImagebwopen;
     }
     return outImagebwopen ;
 }
-
+- (int) getNumContours{
+    return numContoursLast;
+}
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
     // Unable to save the image

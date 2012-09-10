@@ -10,7 +10,6 @@
 #import "CaptureViewControllerLoaLoa.h"
 
 @interface ReviewViewController ()
-
 @end
 
 @implementation ReviewViewController
@@ -48,6 +47,8 @@
 {
     [super viewDidLoad];
     [imageView setImage:_differenceImage];
+     //NSLog(@"%i",numContours);
+
 
 	// Do any additional setup after loading the view.
 }

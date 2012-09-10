@@ -529,7 +529,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2NC-oT-Cbm">
-                                <rect key="frame" x="34" y="46" width="75" height="37"/>
+                                <rect key="frame" x="238" y="6" width="75" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Accept">
@@ -544,7 +544,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="D3f-yw-cig">
-                                <rect key="frame" x="204" y="46" width="72" height="37"/>
+                                <rect key="frame" x="6" y="6" width="72" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Reject">
@@ -711,7 +711,6 @@
         <class className="CaptureViewControllerLoaLoa" superclassName="CaptureViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CaptureViewControllerLoaLoa.h"/>
             <relationships>
-                <relationship kind="action" name="captureImages:"/>
                 <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
             </relationships>
         </class>

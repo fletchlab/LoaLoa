@@ -534,6 +534,8 @@ int i;
     review.managedObjectContext=self.managedObjectContext;
     review.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
     review.differenceImage=analyzedImage;
+    //[review setNumContours:[loaLoaCounter getNumContours]];
+    //review.numContours=[loaLoaCounter getNumContours];
     [self presentModalViewController:review animated:YES];
 
 }
