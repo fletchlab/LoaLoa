@@ -53,6 +53,7 @@
 		9B190E1115FABEEE002206CF /* sample_prep_A.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B190E0A15FABEEE002206CF /* sample_prep_A.png */; };
 		9B190E1215FABEEE002206CF /* sample_prep_B.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B190E0B15FABEEE002206CF /* sample_prep_B.png */; };
 		9B190E1315FABEEE002206CF /* sample_prep_C.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B190E0C15FABEEE002206CF /* sample_prep_C.png */; };
+		9B287B9115FD981900E11650 /* LLInstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B287B9015FD981900E11650 /* LLInstructionViewController.m */; };
 		9B324D7015FAC3F2007730E8 /* LLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B324D6F15FAC3F2007730E8 /* LLLoginViewController.m */; };
 		9B6625FB15FD6D9500222C2E /* LLMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6625FA15FD6D9500222C2E /* LLMainMenuViewController.m */; };
 		9B6625FD15FD6EAA00222C2E /* diabetes-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B6625FC15FD6EAA00222C2E /* diabetes-icon.png */; };
@@ -187,6 +188,8 @@
 		9B190E0A15FABEEE002206CF /* sample_prep_A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample_prep_A.png; sourceTree = "<group>"; };
 		9B190E0B15FABEEE002206CF /* sample_prep_B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample_prep_B.png; sourceTree = "<group>"; };
 		9B190E0C15FABEEE002206CF /* sample_prep_C.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample_prep_C.png; sourceTree = "<group>"; };
+		9B287B8F15FD981900E11650 /* LLInstructionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLInstructionViewController.h; sourceTree = "<group>"; };
+		9B287B9015FD981900E11650 /* LLInstructionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLInstructionViewController.m; sourceTree = "<group>"; };
 		9B324D6E15FAC3F2007730E8 /* LLLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLLoginViewController.h; sourceTree = "<group>"; };
 		9B324D6F15FAC3F2007730E8 /* LLLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLLoginViewController.m; sourceTree = "<group>"; };
 		9B6625F915FD6D9500222C2E /* LLMainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLMainMenuViewController.h; sourceTree = "<group>"; };
@@ -475,6 +478,8 @@
 				827658EE15F6B48300D03FA3 /* Analysis.mm */,
 				9B6625F915FD6D9500222C2E /* LLMainMenuViewController.h */,
 				9B6625FA15FD6D9500222C2E /* LLMainMenuViewController.m */,
+				9B287B8F15FD981900E11650 /* LLInstructionViewController.h */,
+				9B287B9015FD981900E11650 /* LLInstructionViewController.m */,
 			);
 			name = LoaLoa;
 			sourceTree = "<group>";
