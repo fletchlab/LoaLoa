@@ -362,12 +362,6 @@
 				823B8C5015FAC43F00D9CD9A /* CellScope */,
 				9BB5516315FAB8100014E316 /* Nimbus */,
 				827658F515F6BA6900D03FA3 /* libz.dylib */,
-				82DFB19815E4777C00D450BC /* CoreData.framework */,
-				82DFB19615E4777000D450BC /* AVFoundation.framework */,
-				82DFB19415E4776C00D450BC /* CoreMedia.framework */,
-				82DFB19215E4776700D450BC /* CoreVideo.framework */,
-				82DFB18E15E4776200D450BC /* CoreImage.framework */,
-				82DFB18F15E4776200D450BC /* ImageIO.framework */,
 				82DFB10D15E4761E00D450BC /* LoaLoaAugust */,
 				82DFB12E15E4761E00D450BC /* LoaLoaAugustTests */,
 				82DFB10615E4761E00D450BC /* Frameworks */,
@@ -387,6 +381,12 @@
 		82DFB10615E4761E00D450BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				82DFB19815E4777C00D450BC /* CoreData.framework */,
+				82DFB19615E4777000D450BC /* AVFoundation.framework */,
+				82DFB19415E4776C00D450BC /* CoreMedia.framework */,
+				82DFB19215E4776700D450BC /* CoreVideo.framework */,
+				82DFB18E15E4776200D450BC /* CoreImage.framework */,
+				82DFB18F15E4776200D450BC /* ImageIO.framework */,
 				9BB551C215FAB8900014E316 /* AssetsLibrary.framework */,
 				9B589E6115FAA7C600578239 /* OpenCV.framework */,
 				82DFB19815E4777C00D450BC /* CoreData.framework */,
