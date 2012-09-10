@@ -52,37 +52,37 @@ int i;
 - (void)viewDidLoad
 {
     progressBar.progress = 0.0;
-
+    
     //[super viewDidLoad];
 	
     /*// Setup the AV foundation capture session
-    self.session = [[AVCaptureSession alloc] init];
-    self.session.sessionPreset = AVCaptureSessionPresetPhoto;
-    
-    self.device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    self.input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:nil];
-    
-    // Setup image preview layer
-    CALayer *viewLayer = self.previewLayer.layer;
-    AVCaptureVideoPreviewLayer *captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession: self.session];
-    
-    captureVideoPreviewLayer.frame = viewLayer.bounds;
-    [viewLayer addSublayer:captureVideoPreviewLayer];
-    
-    // Setup still image output
-    self.stillOutput = [[AVCaptureStillImageOutput alloc] init];
-    NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys: AVVideoCodecJPEG, AVVideoCodecKey, nil];
-    [self.stillOutput setOutputSettings:outputSettings];
-    */
+     self.session = [[AVCaptureSession alloc] init];
+     self.session.sessionPreset = AVCaptureSessionPresetPhoto;
+     
+     self.device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+     self.input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:nil];
+     
+     // Setup image preview layer
+     CALayer *viewLayer = self.previewLayer.layer;
+     AVCaptureVideoPreviewLayer *captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession: self.session];
+     
+     captureVideoPreviewLayer.frame = viewLayer.bounds;
+     [viewLayer addSublayer:captureVideoPreviewLayer];
+     
+     // Setup still image output
+     self.stillOutput = [[AVCaptureStillImageOutput alloc] init];
+     NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys: AVVideoCodecJPEG, AVVideoCodecKey, nil];
+     [self.stillOutput setOutputSettings:outputSettings];
+     */
     
     // Add session input and output
     //[self.session addInput:self.input];
     //[self.session addOutput:self.stillOutput];
     
     //[self.session startRunning];
-
-
-
+    
+    
+    
     // Setup input and output devices
     self.input = [AVCaptureDeviceInput deviceInputWithDevice:[AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo] error:nil];
     
@@ -96,6 +96,11 @@ int i;
     }
     
     self.VideoHDOutput = [[AVCaptureVideoDataOutput alloc] init];
+    // Configure your output.
+    dispatch_queue_t queue = dispatch_queue_create("myQueue", NULL);
+    [self.videoHDOutput setSampleBufferDelegate:self queue:queue];
+    dispatch_release(queue);
+    
     
     // Process frames while dispatch queue is occupied?
     self.videoHDOutput.alwaysDiscardsLateVideoFrames = YES;
@@ -116,7 +121,7 @@ int i;
     
     captureVideoPreviewLayer.frame = viewLayer.bounds;
     [viewLayer addSublayer:captureVideoPreviewLayer];
-
+    
     
     // Add input and output to the session
     [self.session addInput:input];
@@ -194,23 +199,21 @@ int i;
     /*set the input so that it tries to avoid being unavailable at inopportune moments as it is going in real time */
     assetWriterInput.expectsMediaDataInRealTime = YES;
     
-    // Configure your output.
-    dispatch_queue_t queue = dispatch_queue_create("myQueue", NULL);
-    [videoHDOutput setSampleBufferDelegate:self queue:queue];
-    dispatch_release(queue);
     [self.session startRunning];
     
 }
 
 
 
-- (void) videoHDOutput:(AVCaptureOutput *)videoHDOutput
+- (void) captureOutput:(AVCaptureOutput *)captureOutput
  didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         fromConnection:(AVCaptureConnection *)connection
 {
-    NSLog(@"in sample buffer delegate");
-
+    // NSLog(@"in sample buffer delegate");
+    
     if (recording==TRUE){
+        NSLog(@"recording");
+        
         CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
         //NSLog(@"in capture output");
         //add current imageBuffer to our pixelbufferadaptor
@@ -221,7 +224,7 @@ int i;
                              withPresentationTime:CMTimeMake(frameNumber, 30)];
         }
         
-        if ((frameNumber % 30)==0){
+        if ((frameNumber % 30)==0 && frameNumber<=90){
             //this block puts the current image buffer into NSData.  Right now, stick with converting it to UIImage
             /*
              //get the byte data from sampleBuffer in an NSData
@@ -239,23 +242,27 @@ int i;
              CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
              */
             UIImage *curr_image = [self imageFromSampleBuffer:sampleBuffer];
-            
-            [loaLoaCounter addImage:curr_image];
-            
-            
+            if (frameNumber==90)  {
+                
+                
+                recording=FALSE;
+                [self finishVideo];
+                NSLog(@"done recording");
+                
+            }
+            else
+                [loaLoaCounter addImage:curr_image];
         }
+        
         frameNumber++;
-        if (frameNumber>30) {
-            recording=FALSE;
-            [self finishVideo];
-        }
-            
+        
+        
     }
 }
 
 - (void) finishVideo{
     NSLog(@"stop recording");
-    if(recording) {
+    if(!recording) {
         recording=FALSE;
         [assetWriter finishWriting];
         ALAssetsLibrary * library = [[ALAssetsLibrary alloc] init];
@@ -266,7 +273,7 @@ int i;
              {
                  if (error)
                  {
-                     
+                     NSLog(@"error writing");
                  }
              }];
         }
@@ -274,18 +281,18 @@ int i;
 }
 
 /*- (void)viewDidLoad
-{
-    //progressBar.frame = CGRectMake(20, 20, 200, 15);
-    //[previewLayer addSubview:progressBar];
-    //[self.view bringSubviewToFront:progressBar];
-    //UIProgressView *progressBar = [[UIProgressView alloc] initWithProgressViewStyle:(UIProgressViewStyleDefault)];
-    
-    progressBar.progress = 0.0;
-    
-	// Do any additional setup after loading the view.
-    [super viewDidLoad];
-    
-}*/
+ {
+ //progressBar.frame = CGRectMake(20, 20, 200, 15);
+ //[previewLayer addSubview:progressBar];
+ //[self.view bringSubviewToFront:progressBar];
+ //UIProgressView *progressBar = [[UIProgressView alloc] initWithProgressViewStyle:(UIProgressViewStyleDefault)];
+ 
+ progressBar.progress = 0.0;
+ 
+ // Do any additional setup after loading the view.
+ [super viewDidLoad];
+ 
+ }*/
 
 - (void)viewDidUnload
 {
@@ -299,21 +306,21 @@ int i;
     i=1;
     loaLoaCounter=[[Analysis alloc] init];
     myTimer= [NSTimer scheduledTimerWithTimeInterval: .75 target: self
-                                                      selector: @selector(captureImage:) userInfo: nil repeats: YES];
-    }
+                                            selector: @selector(captureImage:) userInfo: nil repeats: YES];
+}
 
 -(IBAction) captureMovie:(id)sender
 {
     NSLog(@"record button pressed");
     if(!recording) {
         NSLog(@"start recording");
-
+        
         [progressBar setProgress:0.0];
         loaLoaCounter=[[Analysis alloc] init];
         //tell the delegate to start listening to the video output
-
+        
         recording=TRUE;
-
+        
         //reset the frame number
         frameNumber=0;
         //create our analysis object to which we will send data
@@ -341,10 +348,7 @@ int i;
         
         [assetWriter startWriting];
         [assetWriter startSessionAtSourceTime:kCMTimeZero];
-        
     }
-
-
 }
 
 -(void) captureImage:(NSTimer*) t
@@ -353,7 +357,7 @@ int i;
         [myTimer invalidate];
         myTimer=nil;
     }
-
+    
     AVCaptureConnection *videoConnection = nil;
 	for (AVCaptureConnection *connection in stillOutput.connections)
 	{
