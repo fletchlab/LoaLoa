@@ -7,32 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		823B8CC315FD7DB900D9CD9A /* CaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B8C9A15FD7DB900D9CD9A /* CaptureViewController.m */; };
-		823B8CC415FD7DB900D9CD9A /* CellScope-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 823B8C9B15FD7DB900D9CD9A /* CellScope-Info.plist */; };
-		823B8CC515FD7DB900D9CD9A /* CellScope.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 823B8C9D15FD7DB900D9CD9A /* CellScope.xcdatamodeld */; };
-		823B8CC615FD7DB900D9CD9A /* CellScopePadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823B8C9F15FD7DB900D9CD9A /* CellScopePadStoryboard.storyboard */; };
-		823B8CC715FD7DB900D9CD9A /* CellScopePhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823B8CA015FD7DB900D9CD9A /* CellScopePhoneStoryboard.storyboard */; };
-		823B8CC815FD7DB900D9CD9A /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B8CA215FD7DB900D9CD9A /* CoreDataHelper.m */; };
-		823B8CC915FD7DB900D9CD9A /* CSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B8CA415FD7DB900D9CD9A /* CSAppDelegate.m */; };
-		823B8CCA15FD7DB900D9CD9A /* CSUserContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B8CA615FD7DB900D9CD9A /* CSUserContext.m */; };
-		823B8CCB15FD7DB900D9CD9A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 823B8CA715FD7DB900D9CD9A /* InfoPlist.strings */; };
-		823B8CCC15FD7DB900D9CD9A /* cellscope_logo_1600-bkgd.png in Resources */ = {isa = PBXBuildFile; fileRef = 823B8CAA15FD7DB900D9CD9A /* cellscope_logo_1600-bkgd.png */; };
-		823B8CCD15FD7DB900D9CD9A /* login_texfield_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 823B8CAB15FD7DB900D9CD9A /* login_texfield_bg.png */; };
-		823B8CCE15FD7DB900D9CD9A /* iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823B8CAC15FD7DB900D9CD9A /* iphone.storyboard */; };
-		823B8CCF15FD7DB900D9CD9A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B8CAE15FD7DB900D9CD9A /* LoginViewController.m */; };
-		823B8CD115FD7DB900D9CD9A /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B8CB115FD7DB900D9CD9A /* PhotoViewController.m */; };
-		823B8CD215FD7DB900D9CD9A /* PictureListDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B8CB315FD7DB900D9CD9A /* PictureListDetail.m */; };
-		823B8CD315FD7DB900D9CD9A /* PictureListMainTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B8CB515FD7DB900D9CD9A /* PictureListMainTable.m */; };
-		823B8CD415FD7DB900D9CD9A /* Pictures.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B8CB715FD7DB900D9CD9A /* Pictures.m */; };
-		823B8CD515FD7DB900D9CD9A /* NimbusPhotos.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 823B8CB915FD7DB900D9CD9A /* NimbusPhotos.bundle */; };
-		823B8CD615FD7DB900D9CD9A /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B8CBC15FD7DB900D9CD9A /* UIImage+Alpha.m */; };
-		823B8CD715FD7DB900D9CD9A /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B8CBE15FD7DB900D9CD9A /* UIImage+Resize.m */; };
-		823B8CD815FD7DB900D9CD9A /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B8CC015FD7DB900D9CD9A /* UIImage+RoundedCorner.m */; };
-		823B8CD915FD7DB900D9CD9A /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B8CC215FD7DB900D9CD9A /* Users.m */; };
-		82541B1D15FD7E7300A4C64D /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 82541B1C15FD7E7300A4C64D /* UIImage+OpenCV.mm */; };
 		82541B2215FE628600A4C64D /* tos-turboliftdoor.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82541B2115FE628600A4C64D /* tos-turboliftdoor.wav */; };
 		82541B2415FE63E800A4C64D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82541B2315FE63E800A4C64D /* AudioToolbox.framework */; };
 		82541B2A15FE6C2500A4C64D /* somethingwrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82541B2915FE6C2500A4C64D /* somethingwrong.wav */; };
+		82541B5B15FE71F200A4C64D /* CaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82541B3215FE71F200A4C64D /* CaptureViewController.m */; };
+		82541B5C15FE71F200A4C64D /* CellScope-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82541B3315FE71F200A4C64D /* CellScope-Info.plist */; };
+		82541B5D15FE71F200A4C64D /* CellScope.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 82541B3515FE71F200A4C64D /* CellScope.xcdatamodeld */; };
+		82541B5E15FE71F200A4C64D /* CellScopePadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82541B3715FE71F200A4C64D /* CellScopePadStoryboard.storyboard */; };
+		82541B5F15FE71F200A4C64D /* CellScopePhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82541B3815FE71F200A4C64D /* CellScopePhoneStoryboard.storyboard */; };
+		82541B6015FE71F200A4C64D /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 82541B3A15FE71F200A4C64D /* CoreDataHelper.m */; };
+		82541B6115FE71F200A4C64D /* CSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82541B3C15FE71F200A4C64D /* CSAppDelegate.m */; };
+		82541B6215FE71F200A4C64D /* CSUserContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 82541B3E15FE71F200A4C64D /* CSUserContext.m */; };
+		82541B6315FE71F200A4C64D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82541B3F15FE71F200A4C64D /* InfoPlist.strings */; };
+		82541B6415FE71F200A4C64D /* cellscope_logo_1600-bkgd.png in Resources */ = {isa = PBXBuildFile; fileRef = 82541B4215FE71F200A4C64D /* cellscope_logo_1600-bkgd.png */; };
+		82541B6515FE71F200A4C64D /* login_texfield_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 82541B4315FE71F200A4C64D /* login_texfield_bg.png */; };
+		82541B6615FE71F200A4C64D /* iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82541B4415FE71F200A4C64D /* iphone.storyboard */; };
+		82541B6715FE71F200A4C64D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82541B4615FE71F200A4C64D /* LoginViewController.m */; };
+		82541B6915FE71F200A4C64D /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82541B4915FE71F200A4C64D /* PhotoViewController.m */; };
+		82541B6A15FE71F200A4C64D /* PictureListDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 82541B4B15FE71F200A4C64D /* PictureListDetail.m */; };
+		82541B6B15FE71F200A4C64D /* PictureListMainTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 82541B4D15FE71F200A4C64D /* PictureListMainTable.m */; };
+		82541B6C15FE71F200A4C64D /* Pictures.m in Sources */ = {isa = PBXBuildFile; fileRef = 82541B4F15FE71F200A4C64D /* Pictures.m */; };
+		82541B6D15FE71F200A4C64D /* NimbusPhotos.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 82541B5115FE71F200A4C64D /* NimbusPhotos.bundle */; };
+		82541B6E15FE71F200A4C64D /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 82541B5415FE71F200A4C64D /* UIImage+Alpha.m */; };
+		82541B6F15FE71F200A4C64D /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 82541B5615FE71F200A4C64D /* UIImage+Resize.m */; };
+		82541B7015FE71F200A4C64D /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 82541B5815FE71F200A4C64D /* UIImage+RoundedCorner.m */; };
+		82541B7115FE71F200A4C64D /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 82541B5A15FE71F200A4C64D /* Users.m */; };
 		8269C39415EC3F7800013C49 /* Main_IPhone_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8269C39315EC3F7800013C49 /* Main_IPhone_Storyboard.storyboard */; };
 		827658EB15EFF69C00D03FA3 /* CaptureViewControllerLoaLoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 827658EA15EFF69C00D03FA3 /* CaptureViewControllerLoaLoa.m */; };
 		827658EF15F6B48300D03FA3 /* Analysis.mm in Sources */ = {isa = PBXBuildFile; fileRef = 827658EE15F6B48300D03FA3 /* Analysis.mm */; };
@@ -109,48 +108,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		823B8C9915FD7DB900D9CD9A /* CaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureViewController.h; sourceTree = "<group>"; };
-		823B8C9A15FD7DB900D9CD9A /* CaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureViewController.m; sourceTree = "<group>"; };
-		823B8C9B15FD7DB900D9CD9A /* CellScope-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CellScope-Info.plist"; sourceTree = "<group>"; };
-		823B8C9C15FD7DB900D9CD9A /* CellScope-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CellScope-Prefix.pch"; sourceTree = "<group>"; };
-		823B8C9E15FD7DB900D9CD9A /* CellScope.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CellScope.xcdatamodel; sourceTree = "<group>"; };
-		823B8C9F15FD7DB900D9CD9A /* CellScopePadStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CellScopePadStoryboard.storyboard; sourceTree = "<group>"; };
-		823B8CA015FD7DB900D9CD9A /* CellScopePhoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CellScopePhoneStoryboard.storyboard; sourceTree = "<group>"; };
-		823B8CA115FD7DB900D9CD9A /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
-		823B8CA215FD7DB900D9CD9A /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
-		823B8CA315FD7DB900D9CD9A /* CSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAppDelegate.h; sourceTree = "<group>"; };
-		823B8CA415FD7DB900D9CD9A /* CSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAppDelegate.m; sourceTree = "<group>"; };
-		823B8CA515FD7DB900D9CD9A /* CSUserContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSUserContext.h; sourceTree = "<group>"; };
-		823B8CA615FD7DB900D9CD9A /* CSUserContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSUserContext.m; sourceTree = "<group>"; };
-		823B8CA815FD7DB900D9CD9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		823B8CAA15FD7DB900D9CD9A /* cellscope_logo_1600-bkgd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellscope_logo_1600-bkgd.png"; sourceTree = "<group>"; };
-		823B8CAB15FD7DB900D9CD9A /* login_texfield_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_texfield_bg.png; sourceTree = "<group>"; };
-		823B8CAC15FD7DB900D9CD9A /* iphone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iphone.storyboard; sourceTree = "<group>"; };
-		823B8CAD15FD7DB900D9CD9A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		823B8CAE15FD7DB900D9CD9A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		823B8CAF15FD7DB900D9CD9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		823B8CB015FD7DB900D9CD9A /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
-		823B8CB115FD7DB900D9CD9A /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
-		823B8CB215FD7DB900D9CD9A /* PictureListDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureListDetail.h; sourceTree = "<group>"; };
-		823B8CB315FD7DB900D9CD9A /* PictureListDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureListDetail.m; sourceTree = "<group>"; };
-		823B8CB415FD7DB900D9CD9A /* PictureListMainTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureListMainTable.h; sourceTree = "<group>"; };
-		823B8CB515FD7DB900D9CD9A /* PictureListMainTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureListMainTable.m; sourceTree = "<group>"; };
-		823B8CB615FD7DB900D9CD9A /* Pictures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pictures.h; sourceTree = "<group>"; };
-		823B8CB715FD7DB900D9CD9A /* Pictures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pictures.m; sourceTree = "<group>"; };
-		823B8CB915FD7DB900D9CD9A /* NimbusPhotos.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NimbusPhotos.bundle; sourceTree = "<group>"; };
-		823B8CBB15FD7DB900D9CD9A /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
-		823B8CBC15FD7DB900D9CD9A /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
-		823B8CBD15FD7DB900D9CD9A /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
-		823B8CBE15FD7DB900D9CD9A /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
-		823B8CBF15FD7DB900D9CD9A /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
-		823B8CC015FD7DB900D9CD9A /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
-		823B8CC115FD7DB900D9CD9A /* Users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Users.h; sourceTree = "<group>"; };
-		823B8CC215FD7DB900D9CD9A /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Users.m; sourceTree = "<group>"; };
 		82541B1B15FD7E7300A4C64D /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+OpenCV.h"; sourceTree = "<group>"; };
 		82541B1C15FD7E7300A4C64D /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+OpenCV.mm"; sourceTree = "<group>"; };
 		82541B2115FE628600A4C64D /* tos-turboliftdoor.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "tos-turboliftdoor.wav"; sourceTree = "<group>"; };
 		82541B2315FE63E800A4C64D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		82541B2915FE6C2500A4C64D /* somethingwrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = somethingwrong.wav; sourceTree = "<group>"; };
+		82541B3115FE71F200A4C64D /* CaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureViewController.h; sourceTree = "<group>"; };
+		82541B3215FE71F200A4C64D /* CaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureViewController.m; sourceTree = "<group>"; };
+		82541B3315FE71F200A4C64D /* CellScope-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CellScope-Info.plist"; sourceTree = "<group>"; };
+		82541B3415FE71F200A4C64D /* CellScope-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CellScope-Prefix.pch"; sourceTree = "<group>"; };
+		82541B3615FE71F200A4C64D /* CellScope.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CellScope.xcdatamodel; sourceTree = "<group>"; };
+		82541B3715FE71F200A4C64D /* CellScopePadStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CellScopePadStoryboard.storyboard; sourceTree = "<group>"; };
+		82541B3815FE71F200A4C64D /* CellScopePhoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CellScopePhoneStoryboard.storyboard; sourceTree = "<group>"; };
+		82541B3915FE71F200A4C64D /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		82541B3A15FE71F200A4C64D /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		82541B3B15FE71F200A4C64D /* CSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAppDelegate.h; sourceTree = "<group>"; };
+		82541B3C15FE71F200A4C64D /* CSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAppDelegate.m; sourceTree = "<group>"; };
+		82541B3D15FE71F200A4C64D /* CSUserContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSUserContext.h; sourceTree = "<group>"; };
+		82541B3E15FE71F200A4C64D /* CSUserContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSUserContext.m; sourceTree = "<group>"; };
+		82541B4015FE71F200A4C64D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		82541B4215FE71F200A4C64D /* cellscope_logo_1600-bkgd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellscope_logo_1600-bkgd.png"; sourceTree = "<group>"; };
+		82541B4315FE71F200A4C64D /* login_texfield_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_texfield_bg.png; sourceTree = "<group>"; };
+		82541B4415FE71F200A4C64D /* iphone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iphone.storyboard; sourceTree = "<group>"; };
+		82541B4515FE71F200A4C64D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		82541B4615FE71F200A4C64D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		82541B4715FE71F200A4C64D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		82541B4815FE71F200A4C64D /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		82541B4915FE71F200A4C64D /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		82541B4A15FE71F200A4C64D /* PictureListDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureListDetail.h; sourceTree = "<group>"; };
+		82541B4B15FE71F200A4C64D /* PictureListDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureListDetail.m; sourceTree = "<group>"; };
+		82541B4C15FE71F200A4C64D /* PictureListMainTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureListMainTable.h; sourceTree = "<group>"; };
+		82541B4D15FE71F200A4C64D /* PictureListMainTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureListMainTable.m; sourceTree = "<group>"; };
+		82541B4E15FE71F200A4C64D /* Pictures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pictures.h; sourceTree = "<group>"; };
+		82541B4F15FE71F200A4C64D /* Pictures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pictures.m; sourceTree = "<group>"; };
+		82541B5115FE71F200A4C64D /* NimbusPhotos.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NimbusPhotos.bundle; sourceTree = "<group>"; };
+		82541B5315FE71F200A4C64D /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
+		82541B5415FE71F200A4C64D /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
+		82541B5515FE71F200A4C64D /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		82541B5615FE71F200A4C64D /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		82541B5715FE71F200A4C64D /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		82541B5815FE71F200A4C64D /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		82541B5915FE71F200A4C64D /* Users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Users.h; sourceTree = "<group>"; };
+		82541B5A15FE71F200A4C64D /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Users.m; sourceTree = "<group>"; };
 		8269C39315EC3F7800013C49 /* Main_IPhone_Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_IPhone_Storyboard.storyboard; sourceTree = "<group>"; };
 		827658E915EFF69C00D03FA3 /* CaptureViewControllerLoaLoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureViewControllerLoaLoa.h; sourceTree = "<group>"; };
 		827658EA15EFF69C00D03FA3 /* CaptureViewControllerLoaLoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureViewControllerLoaLoa.m; sourceTree = "<group>"; };
@@ -303,71 +302,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		823B8C9815FD7DB900D9CD9A /* CellScope */ = {
+		82541B3015FE71F200A4C64D /* CellScope */ = {
 			isa = PBXGroup;
 			children = (
-				823B8C9915FD7DB900D9CD9A /* CaptureViewController.h */,
-				823B8C9A15FD7DB900D9CD9A /* CaptureViewController.m */,
-				823B8C9B15FD7DB900D9CD9A /* CellScope-Info.plist */,
-				823B8C9C15FD7DB900D9CD9A /* CellScope-Prefix.pch */,
-				823B8C9D15FD7DB900D9CD9A /* CellScope.xcdatamodeld */,
-				823B8C9F15FD7DB900D9CD9A /* CellScopePadStoryboard.storyboard */,
-				823B8CA015FD7DB900D9CD9A /* CellScopePhoneStoryboard.storyboard */,
-				823B8CA115FD7DB900D9CD9A /* CoreDataHelper.h */,
-				823B8CA215FD7DB900D9CD9A /* CoreDataHelper.m */,
-				823B8CA315FD7DB900D9CD9A /* CSAppDelegate.h */,
-				823B8CA415FD7DB900D9CD9A /* CSAppDelegate.m */,
-				823B8CA515FD7DB900D9CD9A /* CSUserContext.h */,
-				823B8CA615FD7DB900D9CD9A /* CSUserContext.m */,
-				823B8CA715FD7DB900D9CD9A /* InfoPlist.strings */,
-				823B8CA915FD7DB900D9CD9A /* Images */,
-				823B8CAC15FD7DB900D9CD9A /* iphone.storyboard */,
-				823B8CAD15FD7DB900D9CD9A /* LoginViewController.h */,
-				823B8CAE15FD7DB900D9CD9A /* LoginViewController.m */,
-				823B8CAF15FD7DB900D9CD9A /* main.m */,
-				823B8CB015FD7DB900D9CD9A /* PhotoViewController.h */,
-				823B8CB115FD7DB900D9CD9A /* PhotoViewController.m */,
-				823B8CB215FD7DB900D9CD9A /* PictureListDetail.h */,
-				823B8CB315FD7DB900D9CD9A /* PictureListDetail.m */,
-				823B8CB415FD7DB900D9CD9A /* PictureListMainTable.h */,
-				823B8CB515FD7DB900D9CD9A /* PictureListMainTable.m */,
-				823B8CB615FD7DB900D9CD9A /* Pictures.h */,
-				823B8CB715FD7DB900D9CD9A /* Pictures.m */,
-				823B8CB815FD7DB900D9CD9A /* resources */,
-				823B8CBA15FD7DB900D9CD9A /* UIImage-categories */,
-				823B8CC115FD7DB900D9CD9A /* Users.h */,
-				823B8CC215FD7DB900D9CD9A /* Users.m */,
+				82541B3115FE71F200A4C64D /* CaptureViewController.h */,
+				82541B3215FE71F200A4C64D /* CaptureViewController.m */,
+				82541B3315FE71F200A4C64D /* CellScope-Info.plist */,
+				82541B3415FE71F200A4C64D /* CellScope-Prefix.pch */,
+				82541B3515FE71F200A4C64D /* CellScope.xcdatamodeld */,
+				82541B3715FE71F200A4C64D /* CellScopePadStoryboard.storyboard */,
+				82541B3815FE71F200A4C64D /* CellScopePhoneStoryboard.storyboard */,
+				82541B3915FE71F200A4C64D /* CoreDataHelper.h */,
+				82541B3A15FE71F200A4C64D /* CoreDataHelper.m */,
+				82541B3B15FE71F200A4C64D /* CSAppDelegate.h */,
+				82541B3C15FE71F200A4C64D /* CSAppDelegate.m */,
+				82541B3D15FE71F200A4C64D /* CSUserContext.h */,
+				82541B3E15FE71F200A4C64D /* CSUserContext.m */,
+				82541B3F15FE71F200A4C64D /* InfoPlist.strings */,
+				82541B4115FE71F200A4C64D /* Images */,
+				82541B4415FE71F200A4C64D /* iphone.storyboard */,
+				82541B4515FE71F200A4C64D /* LoginViewController.h */,
+				82541B4615FE71F200A4C64D /* LoginViewController.m */,
+				82541B4715FE71F200A4C64D /* main.m */,
+				82541B4815FE71F200A4C64D /* PhotoViewController.h */,
+				82541B4915FE71F200A4C64D /* PhotoViewController.m */,
+				82541B4A15FE71F200A4C64D /* PictureListDetail.h */,
+				82541B4B15FE71F200A4C64D /* PictureListDetail.m */,
+				82541B4C15FE71F200A4C64D /* PictureListMainTable.h */,
+				82541B4D15FE71F200A4C64D /* PictureListMainTable.m */,
+				82541B4E15FE71F200A4C64D /* Pictures.h */,
+				82541B4F15FE71F200A4C64D /* Pictures.m */,
+				82541B5015FE71F200A4C64D /* resources */,
+				82541B5215FE71F200A4C64D /* UIImage-categories */,
+				82541B5915FE71F200A4C64D /* Users.h */,
+				82541B5A15FE71F200A4C64D /* Users.m */,
 			);
-			name = CellScope;
-			path = "../cellscope-2012/cellscope-august-2012/CellScope";
+			path = CellScope;
 			sourceTree = "<group>";
 		};
-		823B8CA915FD7DB900D9CD9A /* Images */ = {
+		82541B4115FE71F200A4C64D /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				823B8CAA15FD7DB900D9CD9A /* cellscope_logo_1600-bkgd.png */,
-				823B8CAB15FD7DB900D9CD9A /* login_texfield_bg.png */,
+				82541B4215FE71F200A4C64D /* cellscope_logo_1600-bkgd.png */,
+				82541B4315FE71F200A4C64D /* login_texfield_bg.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
 		};
-		823B8CB815FD7DB900D9CD9A /* resources */ = {
+		82541B5015FE71F200A4C64D /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				823B8CB915FD7DB900D9CD9A /* NimbusPhotos.bundle */,
+				82541B5115FE71F200A4C64D /* NimbusPhotos.bundle */,
 			);
 			path = resources;
 			sourceTree = "<group>";
 		};
-		823B8CBA15FD7DB900D9CD9A /* UIImage-categories */ = {
+		82541B5215FE71F200A4C64D /* UIImage-categories */ = {
 			isa = PBXGroup;
 			children = (
-				823B8CBB15FD7DB900D9CD9A /* UIImage+Alpha.h */,
-				823B8CBC15FD7DB900D9CD9A /* UIImage+Alpha.m */,
-				823B8CBD15FD7DB900D9CD9A /* UIImage+Resize.h */,
-				823B8CBE15FD7DB900D9CD9A /* UIImage+Resize.m */,
-				823B8CBF15FD7DB900D9CD9A /* UIImage+RoundedCorner.h */,
-				823B8CC015FD7DB900D9CD9A /* UIImage+RoundedCorner.m */,
+				82541B5315FE71F200A4C64D /* UIImage+Alpha.h */,
+				82541B5415FE71F200A4C64D /* UIImage+Alpha.m */,
+				82541B5515FE71F200A4C64D /* UIImage+Resize.h */,
+				82541B5615FE71F200A4C64D /* UIImage+Resize.m */,
+				82541B5715FE71F200A4C64D /* UIImage+RoundedCorner.h */,
+				82541B5815FE71F200A4C64D /* UIImage+RoundedCorner.m */,
 			);
 			path = "UIImage-categories";
 			sourceTree = "<group>";
@@ -375,7 +373,7 @@
 		82DFB0F815E4761E00D450BC = {
 			isa = PBXGroup;
 			children = (
-				823B8C9815FD7DB900D9CD9A /* CellScope */,
+				82541B3015FE71F200A4C64D /* CellScope */,
 				9BB5516315FAB8100014E316 /* Nimbus */,
 				827658F515F6BA6900D03FA3 /* libz.dylib */,
 				82DFB10D15E4761E00D450BC /* LoaLoaAugust */,
@@ -682,16 +680,16 @@
 				9B6625FD15FD6EAA00222C2E /* diabetes-icon.png in Resources */,
 				9B6625FF15FD70AC00222C2E /* images icon.png in Resources */,
 				9B66260115FD70DE00222C2E /* users.png in Resources */,
-				823B8CC415FD7DB900D9CD9A /* CellScope-Info.plist in Resources */,
-				823B8CC615FD7DB900D9CD9A /* CellScopePadStoryboard.storyboard in Resources */,
-				823B8CC715FD7DB900D9CD9A /* CellScopePhoneStoryboard.storyboard in Resources */,
-				823B8CCB15FD7DB900D9CD9A /* InfoPlist.strings in Resources */,
-				823B8CCC15FD7DB900D9CD9A /* cellscope_logo_1600-bkgd.png in Resources */,
-				823B8CCD15FD7DB900D9CD9A /* login_texfield_bg.png in Resources */,
-				823B8CCE15FD7DB900D9CD9A /* iphone.storyboard in Resources */,
-				823B8CD515FD7DB900D9CD9A /* NimbusPhotos.bundle in Resources */,
 				82541B2215FE628600A4C64D /* tos-turboliftdoor.wav in Resources */,
 				82541B2A15FE6C2500A4C64D /* somethingwrong.wav in Resources */,
+				82541B5C15FE71F200A4C64D /* CellScope-Info.plist in Resources */,
+				82541B5E15FE71F200A4C64D /* CellScopePadStoryboard.storyboard in Resources */,
+				82541B5F15FE71F200A4C64D /* CellScopePhoneStoryboard.storyboard in Resources */,
+				82541B6315FE71F200A4C64D /* InfoPlist.strings in Resources */,
+				82541B6415FE71F200A4C64D /* cellscope_logo_1600-bkgd.png in Resources */,
+				82541B6515FE71F200A4C64D /* login_texfield_bg.png in Resources */,
+				82541B6615FE71F200A4C64D /* iphone.storyboard in Resources */,
+				82541B6D15FE71F200A4C64D /* NimbusPhotos.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,21 +758,21 @@
 				9BB551C115FAB86B0014E316 /* NIPagingScrollView.m in Sources */,
 				9B324D7015FAC3F2007730E8 /* LLLoginViewController.m in Sources */,
 				9B6625FB15FD6D9500222C2E /* LLMainMenuViewController.m in Sources */,
-				823B8CC315FD7DB900D9CD9A /* CaptureViewController.m in Sources */,
-				823B8CC515FD7DB900D9CD9A /* CellScope.xcdatamodeld in Sources */,
-				823B8CC815FD7DB900D9CD9A /* CoreDataHelper.m in Sources */,
-				823B8CC915FD7DB900D9CD9A /* CSAppDelegate.m in Sources */,
-				823B8CCA15FD7DB900D9CD9A /* CSUserContext.m in Sources */,
-				823B8CCF15FD7DB900D9CD9A /* LoginViewController.m in Sources */,
-				823B8CD115FD7DB900D9CD9A /* PhotoViewController.m in Sources */,
-				823B8CD215FD7DB900D9CD9A /* PictureListDetail.m in Sources */,
-				823B8CD315FD7DB900D9CD9A /* PictureListMainTable.m in Sources */,
-				823B8CD415FD7DB900D9CD9A /* Pictures.m in Sources */,
-				823B8CD615FD7DB900D9CD9A /* UIImage+Alpha.m in Sources */,
-				823B8CD715FD7DB900D9CD9A /* UIImage+Resize.m in Sources */,
-				823B8CD815FD7DB900D9CD9A /* UIImage+RoundedCorner.m in Sources */,
-				823B8CD915FD7DB900D9CD9A /* Users.m in Sources */,
-				82541B1D15FD7E7300A4C64D /* UIImage+OpenCV.mm in Sources */,
+				9B287B9115FD981900E11650 /* LLInstructionViewController.m in Sources */,
+				82541B5B15FE71F200A4C64D /* CaptureViewController.m in Sources */,
+				82541B5D15FE71F200A4C64D /* CellScope.xcdatamodeld in Sources */,
+				82541B6015FE71F200A4C64D /* CoreDataHelper.m in Sources */,
+				82541B6115FE71F200A4C64D /* CSAppDelegate.m in Sources */,
+				82541B6215FE71F200A4C64D /* CSUserContext.m in Sources */,
+				82541B6715FE71F200A4C64D /* LoginViewController.m in Sources */,
+				82541B6915FE71F200A4C64D /* PhotoViewController.m in Sources */,
+				82541B6A15FE71F200A4C64D /* PictureListDetail.m in Sources */,
+				82541B6B15FE71F200A4C64D /* PictureListMainTable.m in Sources */,
+				82541B6C15FE71F200A4C64D /* Pictures.m in Sources */,
+				82541B6E15FE71F200A4C64D /* UIImage+Alpha.m in Sources */,
+				82541B6F15FE71F200A4C64D /* UIImage+Resize.m in Sources */,
+				82541B7015FE71F200A4C64D /* UIImage+RoundedCorner.m in Sources */,
+				82541B7115FE71F200A4C64D /* Users.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,10 +795,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		823B8CA715FD7DB900D9CD9A /* InfoPlist.strings */ = {
+		82541B3F15FE71F200A4C64D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				823B8CA815FD7DB900D9CD9A /* en */,
+				82541B4015FE71F200A4C64D /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -968,12 +966,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		823B8C9D15FD7DB900D9CD9A /* CellScope.xcdatamodeld */ = {
+		82541B3515FE71F200A4C64D /* CellScope.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				823B8C9E15FD7DB900D9CD9A /* CellScope.xcdatamodel */,
+				82541B3615FE71F200A4C64D /* CellScope.xcdatamodel */,
 			);
-			currentVersion = 823B8C9E15FD7DB900D9CD9A /* CellScope.xcdatamodel */;
+			currentVersion = 82541B3615FE71F200A4C64D /* CellScope.xcdatamodel */;
 			path = CellScope.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
