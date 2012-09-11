@@ -20,7 +20,7 @@
 
 @implementation Analysis
 UIImage *outImagebwopen;
-int numContoursLast;
+int numContoursLast=1;
 
 
 -(id)init

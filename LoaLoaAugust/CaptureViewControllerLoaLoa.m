@@ -543,9 +543,11 @@ int i;
     rvc.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
     rvc.differenceImage=analyzedImage;
     
-    //[review setNumContours:[loaLoaCounter getNumContours]];
-    //review.numContours=[loaLoaCounter getNumContours];
-    //[self presentModalViewController:review animated:YES];
+    rvc.numContoursReview=[loaLoaCounter getNumContours];
+    NSLog(@"from closeCapture numcontours=%i",[loaLoaCounter getNumContours] );
+
+    //[self presentModalViewController:rvc animated:YES];
+
 }
 
 

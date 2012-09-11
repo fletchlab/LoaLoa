@@ -14,9 +14,11 @@
 @end
 
 @implementation ReviewViewController
+@synthesize numContoursTitle;
 @synthesize imageView;
 @synthesize accept;
 @synthesize reject;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,7 +46,12 @@
 {
     [super viewDidLoad];
     [imageView setImage:_differenceImage];
-     //NSLog(@"%i",numContours);
+     NSLog(@"numcontours %i",_numContoursReview);
+    NSString *description= [NSString stringWithFormat:@"Microfillae: %i", _numContoursReview];
+
+    numContoursTitle.text=description;
+    numContoursTitle.textColor = [UIColor redColor];
+
 
 
 	// Do any additional setup after loading the view.
@@ -55,6 +62,7 @@
     [self setImageView:nil];
     [self setAccept:nil];
     [self setReject:nil];
+    [self setNumContoursTitle:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

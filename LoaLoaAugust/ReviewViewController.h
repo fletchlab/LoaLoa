@@ -18,6 +18,9 @@ int numContours;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *accept;
 @property (weak, nonatomic) IBOutlet UIButton *reject;
+@property int numContoursReview;
+@property (weak, nonatomic) IBOutlet UILabel *numContoursTitle;
+
 
 - (IBAction)acceptData:(id)sender;
 
