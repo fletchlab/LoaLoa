@@ -206,6 +206,7 @@
                         <outlet property="lastCaptured" destination="mgl-fB-Ucg" id="bNu-x6-0jV"/>
                         <outlet property="previewLayer" destination="JLf-Qj-N4Y" id="Row-fl-dLG"/>
                         <outlet property="progressBar" destination="GNa-II-ozL" id="afE-Sw-hRg"/>
+                        <segue destination="JdO-pl-nvK" kind="modal" identifier="Review" id="2AK-pX-HYw"/>
                     </connections>
                 </viewController>
             </objects>
@@ -569,7 +570,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="4181" y="-501"/>
+            <point key="canvasLocation" x="4207" y="-501"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nnf-xs-fEH">

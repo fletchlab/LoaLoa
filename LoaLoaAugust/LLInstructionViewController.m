@@ -45,7 +45,7 @@ AVAudioPlayer *player;
     if (err) {
         NSLog(@"AudioSessionSetProperty kAudioSessionProperty_AudioCategory failed: %ld", err);
     }
-    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: @"somethingwrong" ofType: @"wav"];
+    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: @"prepare blood sample" ofType: @"wav"];
     NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: soundFilePath];
     player = [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL error: nil];
     
