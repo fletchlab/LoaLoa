@@ -15,5 +15,6 @@
 @property (strong, nonatomic) CSUserContext *userContext;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property int soundNum;
 
 @end
