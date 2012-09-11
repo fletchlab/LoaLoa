@@ -7,7 +7,7 @@
 //
 
 #import "LLMainMenuViewController.h"
-#import "LoaLoaViewController.h"
+#import "LLInstructionViewController.h"
 
 @interface LLMainMenuViewController ()
 
@@ -49,7 +49,7 @@
     
     if([segue.identifier isEqualToString:@"LoaLoaInst0"]) {
         // Get a reference to the capture view
-        LoaLoaViewController *lvc=(LoaLoaViewController*)[segue destinationViewController];
+        LLInstructionViewController *lvc=(LLInstructionViewController*)[segue destinationViewController];
         lvc.userContext = self.userContext;
         lvc.managedObjectContext = self.managedObjectContext;
         NSLog(@"transfered db to next loaloavc");

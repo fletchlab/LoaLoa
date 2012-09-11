@@ -7,6 +7,7 @@
 //
 
 #import "CaptureViewControllerLoaLoa.h"
+#import "LLMainMenuViewController.h"
 #import "UIImage+Resize.h"
 #import "Pictures.h"
 #import "CSUserContext.h"
@@ -524,7 +525,6 @@ int i;
 - (IBAction)closeCapture:(id)sender {
     // Close the AV Capture session
     [self.session stopRunning];
-    
     [self performSegueWithIdentifier:@"Review" sender:self];
 }
 

@@ -8,6 +8,7 @@
 
 #import "ReviewViewController.h"
 #import "CaptureViewControllerLoaLoa.h"
+#import "LLInstructionViewController.h"
 
 @interface ReviewViewController ()
 @end
@@ -25,11 +26,7 @@
     }
     return self;
 }
-- (IBAction)accept:(id)sender {
-    
-    
 
-}
 - (IBAction)reject:(id)sender {
     
     UIStoryboard *MainStoryboard = [UIStoryboard storyboardWithName:@"LoaLoaStoryboard" bundle:nil];
@@ -62,9 +59,32 @@
     // Release any retained subviews of the main view.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"AcceptFirstRun"]) {
+        UINavigationController *navController = (UINavigationController *)[segue destinationViewController];
+        LLInstructionViewController *ivc = (LLInstructionViewController *)[[navController viewControllers] lastObject];
+        
+        // Pass Core Data and CellScope user context to next view
+        ivc.managedObjectContext = self.managedObjectContext;
+        ivc.userContext = self.userContext;
+    }
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (IBAction)acceptData:(id)sender {
+    UIStoryboard *MainStoryboard = [UIStoryboard storyboardWithName:@"LoaLoaStoryboard" bundle:nil];
+    
+    UINavigationController *navController = self.navigationController;
+    [[navController viewControllers] objectAtIndex:0];
+    LLInstructionViewController *ivc = (LLInstructionViewController *)[[navController viewControllers] objectAtIndex:0];    
+    ivc.managedObjectContext = self.managedObjectContext;
+    ivc.userContext = self.userContext;
+    [self presentModalViewController:ivc animated:YES];
 }
 
 @end

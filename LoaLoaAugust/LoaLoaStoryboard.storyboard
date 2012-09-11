@@ -9,7 +9,7 @@
         <scene sceneID="xPn-YJ-il4">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BZP-M1-bhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="SDM-DK-sKw" customClass="LLMainMenuViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MainMenu" id="SDM-DK-sKw" customClass="LLMainMenuViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1pT-CN-r3n">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -541,7 +541,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="accept:" destination="JdO-pl-nvK" eventType="touchUpInside" id="rDf-ZV-1wo"/>
+                                    <segue destination="Jgu-ET-NJb" kind="modal" identifier="AcceptFirstRun" id="jUt-h2-I1J"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="D3f-yw-cig">
@@ -576,7 +576,7 @@
         <scene sceneID="Nnf-xs-fEH">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cV5-5r-06J" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController definesPresentationContext="YES" id="Jgu-ET-NJb" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CaptureLoop" definesPresentationContext="YES" id="Jgu-ET-NJb" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="Hy5-bC-aP6">
                         <rect key="frame" x="0.0" y="-44" width="0.0" height="44"/>
@@ -587,13 +587,13 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="4580" y="-501"/>
+            <point key="canvasLocation" x="4604" y="-501"/>
         </scene>
         <!--Instruction View Controller-->
         <scene sceneID="UMq-Xy-b7n">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5M-jf-UXX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="ovD-ov-OHB" customClass="LLInstructionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoveSample" id="ovD-ov-OHB" customClass="LLInstructionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A6K-Qy-2kS">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -615,7 +615,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="W0T-cc-Tlw"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="fastForward" id="R7e-Rd-PD3">
                             <connections>
-                                <segue destination="cfo-Ty-GlZ" kind="push" id="LwC-hO-SF5"/>
+                                <segue destination="cfo-Ty-GlZ" kind="push" identifier="NextInstruction" id="LwC-hO-SF5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -624,7 +624,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="5002" y="-494"/>
+            <point key="canvasLocation" x="5022" y="-494"/>
         </scene>
         <!--View Controller - Item 1-->
         <scene sceneID="ccX-27-mll">
@@ -730,71 +730,17 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="t7e-nR-yek"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="fastForward" id="eiS-aV-vQR">
                             <connections>
-                                <segue destination="Afd-jd-qXb" kind="modal" id="rGP-fF-pr9"/>
+                                <action selector="loopToCapture:" destination="cfo-Ty-GlZ" id="5nn-Bq-6LO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="scrollView" destination="juu-iy-juD" id="zR3-em-V0F"/>
+                        <segue destination="15V-LC-m3U" kind="modal" identifier="ShowResults" id="lIo-wy-KoR"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="5422" y="-494"/>
-        </scene>
-        <!--Capture View Controller Loa Loa-->
-        <scene sceneID="Fqr-dt-8Lv">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2GZ-hZ-pML" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="Capture2" id="Afd-jd-qXb" customClass="CaptureViewControllerLoaLoa" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hJW-3f-osc">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" id="WG6-CA-bUT" userLabel="Preview Layer">
-                                <rect key="frame" x="0.0" y="20" width="320" height="396"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" id="Rw0-RI-Msf">
-                                <rect key="frame" x="20" y="320" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="rij-zX-Vs1">
-                                <rect key="frame" x="0.0" y="416" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem systemItem="stop" id="asg-Mc-bRh">
-                                        <connections>
-                                            <action selector="closeCapture:" destination="Afd-jd-qXb" id="mKW-VD-xRF"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="8bf-Go-FY3"/>
-                                    <barButtonItem systemItem="camera" id="0vq-DB-jAR">
-                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <connections>
-                                            <action selector="captureMovie:" destination="Afd-jd-qXb" id="cgB-fs-Kv6"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="eMC-mZ-bGe"/>
-                                </items>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                            </toolbar>
-                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" id="FVA-1h-YdM">
-                                <rect key="frame" x="85" y="3" width="150" height="9"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </progressView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="EoH-N2-K5I"/>
-                    <connections>
-                        <outlet property="lastCaptured" destination="Rw0-RI-Msf" id="tjf-D2-lyt"/>
-                        <outlet property="previewLayer" destination="WG6-CA-bUT" id="0ok-Ue-Hbq"/>
-                        <outlet property="progressBar" destination="FVA-1h-YdM" id="a7L-QZ-9y5"/>
-                    </connections>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="5864" y="-494"/>
         </scene>
         <!--Instruction View Controller-->
         <scene sceneID="ZlI-Rx-VaR">
@@ -887,6 +833,84 @@
             </objects>
             <point key="canvasLocation" x="1010" y="711"/>
         </scene>
+        <!--View Controller - Item 1-->
+        <scene sceneID="SoC-9x-x9F">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sTr-wc-9rb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="15V-LC-m3U" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tbM-q6-Tg3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3112" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="qpu-pd-m9d">
+                                <rect key="frame" x="72" y="16" width="197" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="70"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="mf/ml" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="na0-Nz-s63">
+                                <rect key="frame" x="240" y="90" width="44" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="testbar.png" id="3Az-Zs-0tG">
+                                <rect key="frame" x="49" y="148" width="220" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Btd-wp-WuV">
+                                <rect key="frame" x="45" y="176" width="16" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="E2h-wq-dLr">
+                                <rect key="frame" x="101" y="176" width="32" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="5000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="bZI-o2-PSv">
+                                <rect key="frame" x="206" y="176" width="32" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="4250" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="ZZE-2U-GsD">
+                                <rect key="frame" x="163" y="176" width="32" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleToFill" image="cursor.png" id="nJn-rQ-te8">
+                                <rect key="frame" x="141" y="133" width="26" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Treat with IVM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="KrI-kk-gno">
+                                <rect key="frame" x="63" y="274" width="319" height="117"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Check-icon.png" id="uis-D9-oY8">
+                                <rect key="frame" x="86" y="220" width="136" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80295279610000003" green="0.88614810040000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="9oR-LL-2YN"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="5871" y="-494"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Check-icon.png" width="256" height="256"/>
@@ -946,6 +970,7 @@
         <class className="ReviewViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ReviewViewController.h"/>
             <relationships>
+                <relationship kind="action" name="acceptData:"/>
                 <relationship kind="outlet" name="accept" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="reject" candidateClass="UIButton"/>

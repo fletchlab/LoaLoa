@@ -85,4 +85,17 @@ AVAudioPlayer *player;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)loopToCapture:(id)sender {
+    int x = arc4random() % 3;
+    if(x != 0) {
+        UIStoryboard *MainStoryboard = [UIStoryboard storyboardWithName:@"LoaLoaStoryboard" bundle:nil];
+        CaptureViewController *cvc=[MainStoryboard instantiateViewControllerWithIdentifier:(NSString *)@"Capture1"];
+        cvc.managedObjectContext = self.managedObjectContext;
+        cvc.userContext = self.userContext;
+        [self presentModalViewController:cvc animated:YES];
+    }
+    else {
+        [self performSegueWithIdentifier:@"ShowResults" sender:self];
+    }
+}
 @end

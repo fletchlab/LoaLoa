@@ -16,4 +16,6 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+- (IBAction)loopToCapture:(id)sender;
+
 @end

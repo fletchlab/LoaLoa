@@ -19,6 +19,7 @@ int numContours;
 @property (weak, nonatomic) IBOutlet UIButton *accept;
 @property (weak, nonatomic) IBOutlet UIButton *reject;
 
+- (IBAction)acceptData:(id)sender;
 
 
 
