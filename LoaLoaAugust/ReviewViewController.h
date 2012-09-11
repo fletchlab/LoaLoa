@@ -22,6 +22,7 @@ int numContours;
 @property (weak, nonatomic) IBOutlet UILabel *numContoursTitle;
 
 
+- (IBAction)acceptData:(id)sender;
 
 
 

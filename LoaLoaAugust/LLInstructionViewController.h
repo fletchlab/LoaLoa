@@ -17,4 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property int soundNum;
 
+- (IBAction)loopToCapture:(id)sender;
+
 @end

@@ -18,8 +18,4 @@
 @property (nonatomic, retain) AVAssetWriterInput *assetWriterInput;
 @property (nonatomic, retain) NSURL *outputURL;
 
-
-
-
-
 @end
