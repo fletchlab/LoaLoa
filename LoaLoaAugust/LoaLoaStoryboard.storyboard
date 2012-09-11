@@ -558,12 +558,20 @@
                                     <action selector="reject:" destination="JdO-pl-nvK" eventType="touchUpInside" id="iiz-xp-agB"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="pzX-Ln-cwq">
+                                <rect key="frame" x="108" y="419" width="153" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="accept" destination="2NC-oT-Cbm" id="Nab-JX-dnw"/>
                         <outlet property="imageView" destination="gTp-rH-d3e" id="ULI-uc-Vro"/>
+                        <outlet property="numContoursTitle" destination="pzX-Ln-cwq" id="WQk-vJ-6Xm"/>
                         <outlet property="reject" destination="D3f-yw-cig" id="b9p-px-1Qb"/>
                     </connections>
                 </viewController>
@@ -737,6 +745,7 @@
                 <relationship kind="action" name="reject:"/>
                 <relationship kind="outlet" name="accept" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="numContoursTitle" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="reject" candidateClass="UIButton"/>
             </relationships>
         </class>
