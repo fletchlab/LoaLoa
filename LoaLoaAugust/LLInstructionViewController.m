@@ -72,7 +72,7 @@ AVAudioPlayer *player;
         cvc.userContext = self.userContext;
         cvc.managedObjectContext = self.managedObjectContext;
     }
-    else /*if([segue.identifier isEqualToString:@"NextInstruction"]) */{
+    else if([segue.identifier isEqualToString:@"NextInstruction"]) {
         // Get a reference to the LLInstruction view controller
         LLInstructionViewController *vc = (LLInstructionViewController*)[segue destinationViewController];
         vc.userContext = self.userContext;
