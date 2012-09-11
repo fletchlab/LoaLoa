@@ -91,6 +91,13 @@
 		9BC0B40D15FD7A4E00BBA2A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC0B40C15FD7A4E00BBA2A1 /* Foundation.framework */; };
 		9BC0B40F15FD7A5400BBA2A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC0B40E15FD7A5400BBA2A1 /* CoreGraphics.framework */; };
 		9BC0B41115FD7A5B00BBA2A1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC0B41015FD7A5B00BBA2A1 /* SenTestingKit.framework */; };
+		9BF17B1C15FEB5A800176639 /* capillary in holder.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9BF17B1515FEB5A800176639 /* capillary in holder.wav */; };
+		9BF17B1D15FEB5A800176639 /* capillary is in the sample.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9BF17B1615FEB5A800176639 /* capillary is in the sample.wav */; };
+		9BF17B1E15FEB5A800176639 /* move sample.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9BF17B1715FEB5A800176639 /* move sample.wav */; };
+		9BF17B1F15FEB5A800176639 /* place holder on stage.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9BF17B1815FEB5A800176639 /* place holder on stage.wav */; };
+		9BF17B2015FEB5A800176639 /* prepare blood sample.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9BF17B1915FEB5A800176639 /* prepare blood sample.wav */; };
+		9BF17B2115FEB5A800176639 /* prepare to focus.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9BF17B1A15FEB5A800176639 /* prepare to focus.wav */; };
+		9BF17B2215FEB5A800176639 /* touch capillary.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9BF17B1B15FEB5A800176639 /* touch capillary.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -270,6 +277,13 @@
 		9BC0B40C15FD7A4E00BBA2A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9BC0B40E15FD7A5400BBA2A1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9BC0B41015FD7A5B00BBA2A1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		9BF17B1515FEB5A800176639 /* capillary in holder.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "capillary in holder.wav"; sourceTree = "<group>"; };
+		9BF17B1615FEB5A800176639 /* capillary is in the sample.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "capillary is in the sample.wav"; sourceTree = "<group>"; };
+		9BF17B1715FEB5A800176639 /* move sample.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "move sample.wav"; sourceTree = "<group>"; };
+		9BF17B1815FEB5A800176639 /* place holder on stage.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "place holder on stage.wav"; sourceTree = "<group>"; };
+		9BF17B1915FEB5A800176639 /* prepare blood sample.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "prepare blood sample.wav"; sourceTree = "<group>"; };
+		9BF17B1A15FEB5A800176639 /* prepare to focus.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "prepare to focus.wav"; sourceTree = "<group>"; };
+		9BF17B1B15FEB5A800176639 /* touch capillary.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "touch capillary.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -417,6 +431,7 @@
 		82DFB10D15E4761E00D450BC /* LoaLoaAugust */ = {
 			isa = PBXGroup;
 			children = (
+				9BF17B1415FEB5A800176639 /* Sounds */,
 				9B190E0515FABEEE002206CF /* Images */,
 				82E425FF15E5A8BF00BCA038 /* LoaLoa */,
 				82DFB11615E4761E00D450BC /* AppDelegate.h */,
@@ -604,6 +619,20 @@
 			name = Pagingscrollview;
 			sourceTree = "<group>";
 		};
+		9BF17B1415FEB5A800176639 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				9BF17B1515FEB5A800176639 /* capillary in holder.wav */,
+				9BF17B1615FEB5A800176639 /* capillary is in the sample.wav */,
+				9BF17B1715FEB5A800176639 /* move sample.wav */,
+				9BF17B1815FEB5A800176639 /* place holder on stage.wav */,
+				9BF17B1915FEB5A800176639 /* prepare blood sample.wav */,
+				9BF17B1A15FEB5A800176639 /* prepare to focus.wav */,
+				9BF17B1B15FEB5A800176639 /* touch capillary.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -692,6 +721,13 @@
 				9B287B9E15FDAAF800E11650 /* no_icon.png in Resources */,
 				82C83F0215FE755B004A283F /* LoaLoaStoryboard.storyboard in Resources */,
 				82C83F0415FE75CB004A283F /* testbar.png in Resources */,
+				9BF17B1C15FEB5A800176639 /* capillary in holder.wav in Resources */,
+				9BF17B1D15FEB5A800176639 /* capillary is in the sample.wav in Resources */,
+				9BF17B1E15FEB5A800176639 /* move sample.wav in Resources */,
+				9BF17B1F15FEB5A800176639 /* place holder on stage.wav in Resources */,
+				9BF17B2015FEB5A800176639 /* prepare blood sample.wav in Resources */,
+				9BF17B2115FEB5A800176639 /* prepare to focus.wav in Resources */,
+				9BF17B2215FEB5A800176639 /* touch capillary.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

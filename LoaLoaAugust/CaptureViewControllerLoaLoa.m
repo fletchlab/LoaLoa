@@ -525,15 +525,24 @@ int i;
     // Close the AV Capture session
     [self.session stopRunning];
     
-    // Dismiss the view controller
-    //[self dismissModalViewControllerAnimated:YES];
-    UIStoryboard *MainStoryboard = [UIStoryboard storyboardWithName:@"LoaLoaStoryboard" bundle:nil];
-    ReviewViewController *review=[MainStoryboard instantiateViewControllerWithIdentifier:(NSString *)@"Review"];
-    //NSArray *viewControllerArray = [initialMainViewController viewControllers];
-    //PictureListMainTableLoaLoa *initialVC=[viewControllerArray objectAtIndex:0];
-    review.managedObjectContext=self.managedObjectContext;
-    review.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
-    review.differenceImage=analyzedImage;
+    [self performSegueWithIdentifier:@"Review" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    /*
+     UIStoryboard *MainStoryboard = [UIStoryboard storyboardWithName:@"LoaLoaStoryboard" bundle:nil];
+     ReviewViewController *review=[MainStoryboard instantiateViewControllerWithIdentifier:(NSString *)@"Review"];
+     //NSArray *viewControllerArray = [initialMainViewController viewControllers];
+     //PictureListMainTableLoaLoa *initialVC=[viewControllerArray objectAtIndex:0];
+     */
+    
+    ReviewViewController* rvc = (ReviewViewController*)[segue destinationViewController];
+    
+    rvc.managedObjectContext=self.managedObjectContext;
+    rvc.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+    rvc.differenceImage=analyzedImage;
+    
     //[review setNumContours:[loaLoaCounter getNumContours]];
     review.numContoursReview=[loaLoaCounter getNumContours];
     NSLog(@"from closeCapture numcontours=%i",[loaLoaCounter getNumContours] );
