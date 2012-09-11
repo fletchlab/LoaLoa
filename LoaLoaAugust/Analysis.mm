@@ -112,7 +112,7 @@ int numContoursLast=1;
             
             storage = cvCreateMemStorage(0); // pl.Ensure you will have enough room here.
             CvSeq *contour = NULL;
-            int size=100;
+            int size=10;
             cvFindContours(input, storage, &contour, sizeof (CvContour),
                            CV_RETR_LIST,
                            CV_CHAIN_APPROX_SIMPLE, cvPoint(0,0));

@@ -52,6 +52,8 @@
         LLInstructionViewController *lvc=(LLInstructionViewController*)[segue destinationViewController];
         lvc.userContext = self.userContext;
         lvc.managedObjectContext = self.managedObjectContext;
+        lvc.soundNum=0;
+        lvc.repetition=0;
         NSLog(@"transfered db to next loaloavc");
     }
     
@@ -59,7 +61,14 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    if (interfaceOrientation==UIInterfaceOrientationPortraitUpsideDown){
+        return YES;
+    }
+    else {
+        return NO;
+    }
+
+    //return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark - Table view data source

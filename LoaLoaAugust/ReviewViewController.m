@@ -9,6 +9,7 @@
 #import "ReviewViewController.h"
 #import "CaptureViewControllerLoaLoa.h"
 #import "LLInstructionViewController.h"
+#import "ResultsViewController.h"
 
 @interface ReviewViewController ()
 @end
@@ -37,6 +38,8 @@
     //PictureListMainTableLoaLoa *initialVC=[viewControllerArray objectAtIndex:0];
     capture.managedObjectContext=self.managedObjectContext;
     capture.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+    capture.repetition=self.repetition;
+
     [self presentModalViewController:capture animated:YES];
 
 }
@@ -47,7 +50,7 @@
     [super viewDidLoad];
     [imageView setImage:_differenceImage];
      NSLog(@"numcontours %i",_numContoursReview);
-    NSString *description= [NSString stringWithFormat:@"Microfillae: %i", _numContoursReview];
+    NSString *description= [NSString stringWithFormat:@"Microfilariae: %i", _numContoursReview];
 
     numContoursTitle.text=description;
     numContoursTitle.textColor = [UIColor redColor];
@@ -70,29 +73,63 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"AcceptFirstRun"]) {
+        if (_repetition<4){
+
         UINavigationController *navController = (UINavigationController *)[segue destinationViewController];
         LLInstructionViewController *ivc = (LLInstructionViewController *)[[navController viewControllers] lastObject];
         
         // Pass Core Data and CellScope user context to next view
         ivc.managedObjectContext = self.managedObjectContext;
         ivc.userContext = self.userContext;
+        ivc.repetition=self.repetition;
+        }
+        else {
+            UIStoryboard *MainStoryboard = [UIStoryboard storyboardWithName:@"LoaLoaStoryboard" bundle:nil];
+            ResultsViewController *rvc=[MainStoryboard instantiateViewControllerWithIdentifier:(NSString *)@"Results1"];
+            rvc.managedObjectContext = self.managedObjectContext;
+            rvc.userContext = self.userContext;
+            rvc.repetition=self.repetition+1;
+            [self presentModalViewController:rvc animated:YES];
+
+        }
     }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    //return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    if (interfaceOrientation==UIInterfaceOrientationPortraitUpsideDown){
+        return YES;
+    }
+    else {
+        return NO;
+    }
+
 }
 
 - (IBAction)acceptData:(id)sender {
-    UIStoryboard *MainStoryboard = [UIStoryboard storyboardWithName:@"LoaLoaStoryboard" bundle:nil];
+    NSLog(@"from review, repetition is %i",_repetition);
+    if (_repetition<2){
+    //UIStoryboard *MainStoryboard = [UIStoryboard storyboardWithName:@"LoaLoaStoryboard" bundle:nil];
     
     UINavigationController *navController = self.navigationController;
     [[navController viewControllers] objectAtIndex:0];
     LLInstructionViewController *ivc = (LLInstructionViewController *)[[navController viewControllers] objectAtIndex:0];    
     ivc.managedObjectContext = self.managedObjectContext;
     ivc.userContext = self.userContext;
+    ivc.repetition=self.repetition;
     [self presentModalViewController:ivc animated:YES];
+    }
+    else {
+        UIStoryboard *MainStoryboard = [UIStoryboard storyboardWithName:@"LoaLoaStoryboard" bundle:nil];
+        CaptureViewControllerLoaLoa *cvc=[MainStoryboard instantiateViewControllerWithIdentifier:(NSString *)@"Results1"];
+        cvc.managedObjectContext = self.managedObjectContext;
+        cvc.userContext = self.userContext;
+        cvc.repetition=self.repetition+1;
+        [self presentModalViewController:cvc animated:YES];
+        //[self performSegueWithIdentifier:@"ShowResults" sender:self];
+
+    }
 }
 
 @end

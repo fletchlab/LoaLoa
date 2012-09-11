@@ -45,7 +45,36 @@ AVAudioPlayer *player;
     if (err) {
         NSLog(@"AudioSessionSetProperty kAudioSessionProperty_AudioCategory failed: %ld", err);
     }
-    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: @"prepare blood sample" ofType: @"wav"];
+    NSString *soundFilePath;
+    if (self.soundNum==0){
+        soundFilePath = [[NSBundle mainBundle] pathForResource: @"prepare blood sample" ofType: @"wav"];
+    }
+    else if (self.soundNum==1){
+        soundFilePath = [[NSBundle mainBundle] pathForResource: @"touch capillary" ofType: @"wav"];
+
+    }
+    else if (self.soundNum==2){
+        soundFilePath = [[NSBundle mainBundle] pathForResource: @"capillary in holder" ofType: @"wav"];
+        
+    }
+    else if (self.soundNum==3){
+        soundFilePath = [[NSBundle mainBundle] pathForResource: @"capillary is in the sample" ofType: @"wav"];
+        
+    }
+    else if (self.soundNum==4){
+        soundFilePath = [[NSBundle mainBundle] pathForResource: @"place holder on stage" ofType: @"wav"];
+        
+    }
+    else if (self.soundNum==5){
+        soundFilePath = [[NSBundle mainBundle] pathForResource: @"prepare to focus" ofType: @"wav"];
+        
+    }
+    else if (self.soundNum>5){
+        soundFilePath = [[NSBundle mainBundle] pathForResource: @"move sample" ofType: @"wav"];
+        
+    }
+
+
     NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: soundFilePath];
     player = [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL error: nil];
     
@@ -71,27 +100,39 @@ AVAudioPlayer *player;
         CaptureViewControllerLoaLoa *cvc = (CaptureViewControllerLoaLoa*)[segue destinationViewController];
         cvc.userContext = self.userContext;
         cvc.managedObjectContext = self.managedObjectContext;
+        cvc.repetition=self.repetition;
     }
     else if([segue.identifier isEqualToString:@"NextInstruction"]) {
         // Get a reference to the LLInstruction view controller
         LLInstructionViewController *vc = (LLInstructionViewController*)[segue destinationViewController];
         vc.userContext = self.userContext;
         vc.managedObjectContext = self.managedObjectContext;
+        vc.soundNum=self.soundNum+1;
+        vc.repetition=self.repetition;
+        NSLog(@"repetition is %i",self.repetition);
+
     }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    //return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    if (interfaceOrientation==UIInterfaceOrientationPortraitUpsideDown){
+        return YES;
+    }
+    else {
+        return NO;
+    }
+
 }
 
 - (IBAction)loopToCapture:(id)sender {
-    int x = arc4random() % 3;
-    if(x != 0) {
+    if(_repetition <= 4) {
         UIStoryboard *MainStoryboard = [UIStoryboard storyboardWithName:@"LoaLoaStoryboard" bundle:nil];
-        CaptureViewController *cvc=[MainStoryboard instantiateViewControllerWithIdentifier:(NSString *)@"Capture1"];
+        CaptureViewControllerLoaLoa *cvc=[MainStoryboard instantiateViewControllerWithIdentifier:(NSString *)@"Capture1"];
         cvc.managedObjectContext = self.managedObjectContext;
         cvc.userContext = self.userContext;
+        cvc.repetition=self.repetition+1;
         [self presentModalViewController:cvc animated:YES];
     }
     else {

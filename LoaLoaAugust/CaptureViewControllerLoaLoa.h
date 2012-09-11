@@ -17,5 +17,5 @@
 @property (nonatomic, retain) AVAssetWriterInputPixelBufferAdaptor *pixelBufferAdaptor ;
 @property (nonatomic, retain) AVAssetWriterInput *assetWriterInput;
 @property (nonatomic, retain) NSURL *outputURL;
-
+@property int repetition;
 @end

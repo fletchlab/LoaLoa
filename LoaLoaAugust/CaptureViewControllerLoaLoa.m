@@ -261,6 +261,9 @@ int i;
                 [self finishVideo];
                 NSLog(@"done recording");
                 analyzedImage=[loaLoaCounter analyzeImages];
+                [self.session stopRunning];
+                [self performSegueWithIdentifier:@"Review" sender:self];
+
 
                 
             }
@@ -542,7 +545,7 @@ int i;
     rvc.managedObjectContext=self.managedObjectContext;
     rvc.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
     rvc.differenceImage=analyzedImage;
-    
+    rvc.repetition=self.repetition;
     rvc.numContoursReview=[loaLoaCounter getNumContours];
     NSLog(@"from closeCapture numcontours=%i",[loaLoaCounter getNumContours] );
 
@@ -553,7 +556,14 @@ int i;
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    if (interfaceOrientation==UIInterfaceOrientationPortraitUpsideDown){
+        return YES;
+    }
+    else {
+        return NO;
+    }
+
+    //return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 
